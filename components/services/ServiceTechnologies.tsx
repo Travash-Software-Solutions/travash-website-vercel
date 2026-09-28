@@ -135,7 +135,7 @@ const GLOBAL_ICON_MAP: Record<string, string> = {
   MinIO: 'https://cdn.simpleicons.org/minio/C72E49',
   LangChain: 'https://cdn.simpleicons.org/langchain/1C3C3C',
   'Llama 3': 'https://cdn.simpleicons.org/meta/0082FB',
-  OpenAI: 'https://cdn.simpleicons.org/openai/412991',
+  OpenAI: '/images/services/openai.svg',
   ONNX: 'https://cdn.simpleicons.org/onnx/717272',
   Keras: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg',
 

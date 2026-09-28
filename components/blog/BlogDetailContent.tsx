@@ -115,7 +115,7 @@ export default function BlogDetailContent({ post }: BlogDetailProps) {
   const contentBlocks = post.content || post.body
 
   return (
-    <article className="max-w-4xl mx-auto font-['Plus_Jakarta_Sans',sans-serif]">
+    <article className="max-w-[84rem] mx-auto font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Top Breadcrumbs */}
       <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs font-semibold text-gray-500">
         <Link href="/" className="hover:text-[#004771] transition-colors">

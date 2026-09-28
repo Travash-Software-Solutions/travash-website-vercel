@@ -9,7 +9,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
 
   return (
     <section className="mt-20 pt-16 border-t border-gray-200 font-['Plus_Jakarta_Sans',sans-serif]">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[84rem] mx-auto">
         <div className="mb-10 text-center sm:text-left">
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             CONTINUE EXPLORING
