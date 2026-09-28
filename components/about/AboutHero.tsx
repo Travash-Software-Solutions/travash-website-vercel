@@ -42,10 +42,10 @@ export default function AboutHero({ data }: AboutHeroProps) {
         <div className="absolute top-12 right-1/4 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="relative max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl text-left">
           {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
+          <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
             <ShieldCheck className="w-4 h-4 text-[#14B8A6]" />
             <span>{eyebrow}</span>
           </div>
@@ -56,12 +56,12 @@ export default function AboutHero({ data }: AboutHeroProps) {
           </h1>
 
           {/* Description */}
-          <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-3xl  mb-6 sm:mb-8">
             {description}
           </p>
 
           {/* Quick Credibility Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-1 pb-6 sm:pb-8 text-xs sm:text-sm font-semibold text-gray-700">
+          <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-6 pt-1 pb-6 sm:pb-8 text-xs sm:text-sm font-semibold text-gray-700">
             {badges.map((badge, idx) => (
               <div key={idx} className="flex items-center gap-2">
                 {idx === 0 && <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#14B8A6]" />}
@@ -74,7 +74,7 @@ export default function AboutHero({ data }: AboutHeroProps) {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-start justify-start gap-3 sm:gap-4">
             <Link
               href={primaryHref}
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-[#004771] hover:bg-[#02487D] text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all"

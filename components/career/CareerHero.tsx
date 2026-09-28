@@ -58,26 +58,26 @@ export default function CareerHero({
         <div className="absolute top-10 right-1/4 w-96 h-96 bg-blue-200/50 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="relative max-w-[94rem] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl text-left">
           {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-6">
+          <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-6">
             <Sparkles className="w-4 h-4 text-[#14B8A6]" />
             <span>{eyebrowText}</span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0B1E3D] tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0B1E3D] tracking-tight leading-[1.15] mb-6">
             {h1}
           </h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed  mb-10">
             {desc}
           </p>
 
           {/* Key highlights */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-2 pb-8 text-sm font-semibold text-gray-700">
+          <div className="flex flex-wrap items-start justify-start gap-4 sm:gap-8 pt-2 pb-8 text-sm font-semibold text-gray-700">
             {customHighlights ? (
               customHighlights.map((item, idx) => {
                 const iconKey = (item.icon || '').toLowerCase()
@@ -115,7 +115,7 @@ export default function CareerHero({
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-start justify-start gap-4">
             <a
               href={primaryCTA.href}
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl bg-[#004771] hover:bg-[#02487D] text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all"

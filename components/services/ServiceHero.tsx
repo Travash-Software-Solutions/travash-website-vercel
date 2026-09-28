@@ -17,7 +17,7 @@ export default function ServiceHero({ hero, serviceTitle }: ServiceHeroProps) {
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-white rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-white rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div className="max-w-[94rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         {/* Breadcrumb Navigation */}
         <motion.nav
           initial={{ opacity: 0, y: -8 }}

@@ -68,20 +68,20 @@ export default async function IndustriesDirectoryPage() {
       <main className="bg-[#F8FAFC] font-['Plus_Jakarta_Sans',sans-serif]">
         {/* Header */}
         <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-b from-[#EBF3FB] via-white to-[#F8FAFC] overflow-hidden">
-          <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#004771] text-xs font-bold uppercase tracking-wider mb-5">
+          <div className="max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 text-left relative z-10">
+            <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#004771] text-xs font-semibold uppercase tracking-wider mb-5">
               <Sparkles className="w-3.5 h-3.5 text-[#14B8A6]" />
               <span>INDUSTRY-SPECIFIC ENGINEERING</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1E3D] tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#0B1E3D] tracking-tight leading-[1.15] max-w-4xl mb-6">
               Deep Domain Expertise Across 8+ Global Verticals
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl leading-relaxed mb-8">
               We engineer specialized digital platforms tailored to complex regulatory environments, high-concurrency transaction demands, and industry-specific workflows.
             </p>
 
             {/* Quick stats ribbon */}
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pt-2 pb-4 text-xs sm:text-sm font-semibold text-gray-700">
+            <div className="flex flex-wrap items-center justify-start gap-6 sm:gap-10 pt-2 pb-4 text-xs sm:text-sm font-semibold text-gray-700">
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4 text-[#14B8A6]" />
                 <span>500+ Delivered Platforms</span>
