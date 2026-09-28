@@ -57,13 +57,14 @@ export default async function ContactUsPage() {
     <>
       <Navbar settings={siteSettings} />
       <main className="bg-white">
-        <ContactHero />
+      
         <ContactPageLayout
           email={siteSettings?.contactEmail || 'contact@travash.com'}
           phone={siteSettings?.contactPhone || '(+91) 7416743434'}
           offices={siteSettings?.offices}
           socialLinks={siteSettings?.socialLinks}
         />
+          <ContactHero />
       </main>
       <Footer settings={siteSettings} />
     </>

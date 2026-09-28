@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -161,9 +161,6 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
     dragFree: false,
   })
 
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
-
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
   }, [emblaApi])
@@ -171,31 +168,6 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index)
-    },
-    [emblaApi]
-  )
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setSelectedIndex(emblaApi.selectedScrollSnap())
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    onSelect()
-    setScrollSnaps(emblaApi.scrollSnapList())
-    emblaApi.on('select', onSelect)
-    emblaApi.on('reInit', onSelect)
-
-    return () => {
-      emblaApi.off('select', onSelect)
-      emblaApi.off('reInit', onSelect)
-    }
-  }, [emblaApi, onSelect])
 
   return (
     <section
@@ -228,7 +200,7 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
             </p>
           </motion.div>
 
-          {/* Header Controls: Slide Counter & Circular Prev/Next Buttons */}
+          {/* Header Controls: Circular Prev/Next Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -236,13 +208,6 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-center gap-3 self-start md:self-end"
           >
-            {/* Slide Index Counter */}
-            <div className="flex items-center px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-2xs text-xs font-bold text-gray-700 tracking-wider">
-              <span className="text-[#02487D]">0{(selectedIndex % displayedStudies.length) + 1}</span>
-              <span className="text-gray-400 mx-1.5">/</span>
-              <span>0{displayedStudies.length}</span>
-            </div>
-
             {/* Circular Prev Button */}
             <button
               type="button"
@@ -332,8 +297,6 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
                             {study.shortDescription}
                           </p>
                         )}
-
-
                       </div>
                     </div>
 
@@ -354,26 +317,9 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
           </div>
         </div>
 
-        {/* Bottom Bar: Dots, Drag Instruction, and Prominent "View All Case Studies" Button */}
+        {/* Bottom Bar: Drag Instruction and Prominent "View All Case Studies" Button */}
         <div className="mt-8 pt-5 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Pagination Dot Indicators */}
-          <div className="flex items-center gap-2">
-            {scrollSnaps.map((_, idx) => {
-              const isActive = idx === selectedIndex
-              return (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => scrollTo(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${isActive ? 'w-7 bg-[#02487D]' : 'w-2 bg-gray-300 hover:bg-gray-400'
-                    }`}
-                />
-              )
-            })}
-          </div>
-
-          {/* Middle: Drag or Swipe Hint */}
+          {/* Left: Drag or Swipe Hint */}
           <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
             <span>Drag or swipe to browse all case studies</span>
             <ArrowRight className="w-3.5 h-3.5 text-gray-400" />
@@ -392,3 +338,4 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
     </section>
   )
 }
+
