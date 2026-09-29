@@ -32,7 +32,7 @@ const DEFAULT_LEADER: Leader = {
   role: 'Founder & Managing Director',
   experienceYears: '24+ Years of Industry Experience',
   bio: 'With over 24 years of experience in the IT industry, Gaurav has gained extensive expertise as a PLM consultant while working with global engineering leaders including Satyam, Geometric Software, GE, and John Deere. In addition to his corporate tenure, he founded Travash Software Solutions to provide premier IT engineering and consulting, and Indi spare Seller Services, a pioneering marketplace for industrial components. His specialization lies in delivering enterprise-grade web, cloud, and mobile platforms at optimal total-cost-of-ownership.',
-  linkedinUrl: 'https://www.linkedin.com/company/travash-software-solutions/',
+  linkedinUrl: 'https://www.linkedin.com/in/gauravgupta5/',
   highlights: ['Satyam • GE • John Deere', 'PLM & Enterprise Architecture'],
 }
 
