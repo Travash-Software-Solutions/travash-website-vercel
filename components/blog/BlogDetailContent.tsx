@@ -143,7 +143,7 @@ export default function BlogDetailContent({ post }: BlogDetailProps) {
         <div className="mb-4">
           <Link
             href={`/blogs/category/${currentCategory.slug}`}
-            className="inline-block px-3.5 py-1 rounded-full bg-sky-50 dark:bg-sky-950/40 text-[#004771] dark:text-sky-300 text-xs font-bold uppercase tracking-wider hover:bg-sky-100 transition-colors"
+            className="inline-block px-3.5 py-1 rounded-full bg-[#E0F2FE] text-[#02487D] dark:text-sky-300 text-xs font-bold uppercase tracking-wider hover:bg-sky-100 transition-colors"
           >
             {currentCategory.title}
           </Link>
