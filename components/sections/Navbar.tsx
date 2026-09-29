@@ -162,7 +162,7 @@ export default function Navbar({ settings }: NavbarProps) {
     settings?.mediaLogo?.file?.asset?.url ||
     settings?.mediaLogo?.externalUrl ||
     settings?.logo?.asset?.url ||
-    'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg'
+    '/travash-latest-logo.svg'
 
   // Hover handlers for smooth mega menu appearance
   const handleMouseEnter = () => {

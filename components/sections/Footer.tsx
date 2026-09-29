@@ -98,7 +98,7 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
     settings?.mediaFooterLogo?.file?.asset?.url ||
     settings?.mediaFooterLogo?.externalUrl ||
     settings?.footerLogo?.asset?.url ||
-    'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg'
+    '/travash-latest-logo.svg'
 
   const menuLinks = settings?.menuLinks && settings.menuLinks.length > 0 ? settings.menuLinks : DEFAULT_MENU_LINKS
   const serviceLinks = settings?.serviceLinks && settings.serviceLinks.length > 0 ? settings.serviceLinks : DEFAULT_SERVICE_LINKS

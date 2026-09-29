@@ -88,10 +88,10 @@ const jsonLd = {
       logo: {
         '@type': 'ImageObject',
         '@id': `${BASE_URL}/#logo`,
-        url: 'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg',
+        url: `${BASE_URL}/travash-latest-logo.svg`,
         caption: 'Travash Software Solutions',
       },
-      image: 'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg',
+      image: `${BASE_URL}/travash-latest-logo.svg`,
       description:
         'Travash is an AI-assisted software and product development company, partnering with startups and enterprises to build high-impact digital products.',
       contactPoint: [
@@ -126,7 +126,7 @@ const jsonLd = {
       '@id': `${BASE_URL}/#professionalService`,
       name: 'Travash Software Solutions',
       url: BASE_URL,
-      logo: 'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg',
+      logo: `${BASE_URL}/travash-latest-logo.svg`,
       priceRange: '$$',
       telephone: '+91-7416743434',
       email: 'contact@travash.com',
