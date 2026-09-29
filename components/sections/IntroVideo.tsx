@@ -14,7 +14,7 @@ interface IntroVideoData {
 
 export default function IntroVideo({ data }: { data?: IntroVideoData }) {
   const [isOpen, setIsOpen] = useState(false)
-  const posterUrl = data?.videoThumbnail?.asset?.url || '/home-img/Group 1000003287.png'
+  const posterUrl = data?.videoThumbnail?.asset?.url || '/home-img/video-thumb.png'
   const heading = data?.heading || 'Meet Your Next Technology Partner'
   const eyebrow = data?.eyebrow || 'Our Intro'
   const videoUrl = data?.videoUrl || 'https://www.youtube.com/embed/ch2ui0gfHUY'
