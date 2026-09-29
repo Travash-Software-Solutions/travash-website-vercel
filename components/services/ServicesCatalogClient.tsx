@@ -253,31 +253,31 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
             <div className="absolute top-10 right-1/4 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl" />
           </div>
 
-          <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#004771] text-xs font-bold uppercase tracking-wider mb-5 shadow-2xs">
+          <div className="max-w-[94rem]  px-4 sm:px-6 lg:px-8 text-left relative z-10">
+            <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#004771] text-xs font-bold uppercase tracking-wider mb-5 shadow-2xs max-w-4xl">
               <Sparkles className="w-3.5 h-3.5 text-[#14B8A6]" />
               <span>ENTERPRISE ENGINEERING CAPABILITIES</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1E3D] tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#0B1E3D] tracking-tight leading-[1.15]  mb-6 max-w-4xl">
               Engineering Rigor Meets Artificial Intelligence
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl text-left leading-relaxed mb-10">
               From mission-critical microservices and high-throughput data platforms to sovereign AI agent systems and dedicated agile squads, explore how we accelerate enterprise scale.
             </p>
 
             {/* Credibility Ribbons */}
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm font-semibold text-gray-700">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-start justify-start gap-6 sm:gap-10 text-xs sm:text-sm font-semibold text-gray-700">
+              <div className="flex items-start gap-2">
                 <Award className="w-4 h-4 text-[#14B8A6]" />
                 <span>20 Years Experience (Est. 2005)</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-start gap-2">
                 <Users className="w-4 h-4 text-[#004771]" />
                 <span>90%+ Repeat Client Retention</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#02487D]" />
                 <span>500+ Delivered Enterprise Systems</span>
               </div>

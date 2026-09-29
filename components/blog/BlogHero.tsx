@@ -21,18 +21,18 @@ export default function BlogHero({ heading, description, eyebrow }: BlogHeroProp
         <div className="absolute top-10 right-1/4 w-80 h-80 bg-blue-200/50 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-6">
+      <div className="relative max-w-[94rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-left">
+          <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-6">
             <BookOpen className="w-3.5 h-3.5 text-[#14B8A6]" />
             <span>{eyebrowText}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1E3D] tracking-tight leading-[1.15] mb-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0B1E3D] tracking-tight leading-[1.15] mb-5">
             {h1}
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl ">
             {desc}
           </p>
         </div>
