@@ -86,9 +86,9 @@ const DEFAULT_OFFICES = [
 ]
 
 const DEFAULT_SOCIALS = [
-  { platform: 'facebook', url: 'https://www.facebook.com/travashsoftwaresolutions' },
-  { platform: 'twitter', url: 'https://twitter.com/TravashSoftSols' },
-  { platform: 'instagram', url: 'https://www.instagram.com/travashsoftwaresolutions/' },
+  { platform: 'facebook', url: 'https://www.facebook.com/travashglobal' },
+  { platform: 'twitter', url: 'https://x.com/travashglobal' },
+  { platform: 'instagram', url: 'https://www.instagram.com/travashglobal/' },
   { platform: 'linkedin', url: 'https://www.linkedin.com/company/travash-software-solutions/' },
 ]
 

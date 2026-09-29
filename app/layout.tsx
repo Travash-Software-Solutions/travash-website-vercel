@@ -105,7 +105,9 @@ const jsonLd = {
       ],
       sameAs: [
         'https://www.linkedin.com/company/travash-software-solutions/',
-        'https://www.facebook.com/TravashSoftwareSolutions/',
+        'https://www.facebook.com/travashglobal',
+        'https://www.instagram.com/travashglobal/',
+        'https://x.com/travashglobal',
       ],
     },
     {
