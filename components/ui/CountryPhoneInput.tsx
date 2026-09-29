@@ -8,30 +8,31 @@ export interface CountryCode {
   dial: string
   flag: string
   name: string
+  maxDigits: number
 }
 
 export const COUNTRY_CODES: CountryCode[] = [
-  { code: 'IN', dial: '+91', flag: '🇮🇳', name: 'India' },
-  { code: 'US', dial: '+1', flag: '🇺🇸', name: 'United States' },
-  { code: 'GB', dial: '+44', flag: '🇬🇧', name: 'United Kingdom' },
-  { code: 'AE', dial: '+971', flag: '🇦🇪', name: 'United Arab Emirates' },
-  { code: 'SA', dial: '+966', flag: '🇸🇦', name: 'Saudi Arabia' },
-  { code: 'QA', dial: '+974', flag: '🇶🇦', name: 'Qatar' },
-  { code: 'SG', dial: '+65', flag: '🇸🇬', name: 'Singapore' },
-  { code: 'AU', dial: '+61', flag: '🇦🇺', name: 'Australia' },
-  { code: 'CA', dial: '+1', flag: '🇨🇦', name: 'Canada' },
-  { code: 'DE', dial: '+49', flag: '🇩🇪', name: 'Germany' },
-  { code: 'FR', dial: '+33', flag: '🇫🇷', name: 'France' },
-  { code: 'KW', dial: '+965', flag: '🇰🇼', name: 'Kuwait' },
-  { code: 'OM', dial: '+968', flag: '🇴🇲', name: 'Oman' },
-  { code: 'BH', dial: '+973', flag: '🇧🇭', name: 'Bahrain' },
-  { code: 'MY', dial: '+60', flag: '🇲🇾', name: 'Malaysia' },
-  { code: 'NP', dial: '+977', flag: '🇳🇵', name: 'Nepal' },
-  { code: 'LK', dial: '+94', flag: '🇱🇰', name: 'Sri Lanka' },
-  { code: 'BD', dial: '+880', flag: '🇧🇩', name: 'Bangladesh' },
-  { code: 'ZA', dial: '+27', flag: '🇿🇦', name: 'South Africa' },
-  { code: 'NZ', dial: '+64', flag: '🇳🇿', name: 'New Zealand' },
-  { code: 'JP', dial: '+81', flag: '🇯🇵', name: 'Japan' },
+  { code: 'IN', dial: '+91', flag: '🇮🇳', name: 'India', maxDigits: 10 },
+  { code: 'US', dial: '+1', flag: '🇺🇸', name: 'United States', maxDigits: 10 },
+  { code: 'GB', dial: '+44', flag: '🇬🇧', name: 'United Kingdom', maxDigits: 10 },
+  { code: 'AE', dial: '+971', flag: '🇦🇪', name: 'United Arab Emirates', maxDigits: 9 },
+  { code: 'SA', dial: '+966', flag: '🇸🇦', name: 'Saudi Arabia', maxDigits: 9 },
+  { code: 'QA', dial: '+974', flag: '🇶🇦', name: 'Qatar', maxDigits: 8 },
+  { code: 'SG', dial: '+65', flag: '🇸🇬', name: 'Singapore', maxDigits: 8 },
+  { code: 'AU', dial: '+61', flag: '🇦🇺', name: 'Australia', maxDigits: 9 },
+  { code: 'CA', dial: '+1', flag: '🇨🇦', name: 'Canada', maxDigits: 10 },
+  { code: 'DE', dial: '+49', flag: '🇩🇪', name: 'Germany', maxDigits: 11 },
+  { code: 'FR', dial: '+33', flag: '🇫🇷', name: 'France', maxDigits: 9 },
+  { code: 'KW', dial: '+965', flag: '🇰🇼', name: 'Kuwait', maxDigits: 8 },
+  { code: 'OM', dial: '+968', flag: '🇴🇲', name: 'Oman', maxDigits: 8 },
+  { code: 'BH', dial: '+973', flag: '🇧🇭', name: 'Bahrain', maxDigits: 8 },
+  { code: 'MY', dial: '+60', flag: '🇲🇾', name: 'Malaysia', maxDigits: 9 },
+  { code: 'NP', dial: '+977', flag: '🇳🇵', name: 'Nepal', maxDigits: 10 },
+  { code: 'LK', dial: '+94', flag: '🇱🇰', name: 'Sri Lanka', maxDigits: 9 },
+  { code: 'BD', dial: '+880', flag: '🇧🇩', name: 'Bangladesh', maxDigits: 10 },
+  { code: 'ZA', dial: '+27', flag: '🇿🇦', name: 'South Africa', maxDigits: 9 },
+  { code: 'NZ', dial: '+64', flag: '🇳🇿', name: 'New Zealand', maxDigits: 9 },
+  { code: 'JP', dial: '+81', flag: '🇯🇵', name: 'Japan', maxDigits: 10 },
 ]
 
 interface CountryPhoneInputProps {
@@ -62,6 +63,7 @@ export default function CountryPhoneInput({
   const [phoneNumber, setPhoneNumber] = useState<string>(defaultValue)
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [search, setSearch] = useState<string>('')
+  const [phoneError, setPhoneError] = useState<string>('')
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const fullPhoneNumber = phoneNumber.trim()
@@ -80,8 +82,18 @@ export default function CountryPhoneInput({
   }, [])
 
   const handlePhoneChange = (val: string) => {
-    setPhoneNumber(val)
-    const combined = val.trim() ? `${selectedCountry.dial} ${val.trim()}` : ''
+    // Allow digits only
+    const digitsOnly = val.replace(/\D/g, '')
+    // Enforce max digit limit for selected country
+    const trimmed = digitsOnly.slice(0, selectedCountry.maxDigits)
+    setPhoneNumber(trimmed)
+    // Validate length
+    if (trimmed.length > 0 && trimmed.length < selectedCountry.maxDigits) {
+      setPhoneError(`${selectedCountry.name} phone numbers must be exactly ${selectedCountry.maxDigits} digits.`)
+    } else {
+      setPhoneError('')
+    }
+    const combined = trimmed ? `${selectedCountry.dial} ${trimmed}` : ''
     if (onChange) onChange(combined)
   }
 
@@ -89,7 +101,11 @@ export default function CountryPhoneInput({
     setSelectedCountry(c)
     setIsOpen(false)
     setSearch('')
-    const combined = phoneNumber.trim() ? `${c.dial} ${phoneNumber.trim()}` : ''
+    // Re-validate current number with new country
+    const trimmed = phoneNumber.slice(0, c.maxDigits)
+    setPhoneNumber(trimmed)
+    setPhoneError('')
+    const combined = trimmed ? `${c.dial} ${trimmed}` : ''
     if (onChange) onChange(combined)
   }
 
@@ -101,17 +117,18 @@ export default function CountryPhoneInput({
   )
 
   return (
-    <div ref={dropdownRef} className={`relative flex items-center w-full min-w-0 ${className}`}>
+    <div ref={dropdownRef} className={`relative flex flex-col w-full min-w-0 ${className}`}>
       {/* Hidden input for native HTML form submission (FormData) */}
       <input type="hidden" name={name} value={fullPhoneNumber} />
 
+      <div className="relative flex items-center w-full">
       {/* Country Code Trigger Button (Compact Flag + Code + Arrow) */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-label="Select Country Code"
-        className="h-full flex-shrink-0 flex items-center justify-between gap-1.5 bg-white border border-gray-200 border-r-0 rounded-l-xl px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#004771]/20 cursor-pointer min-w-[96px] max-w-[108px] transition-all select-none"
+        className="h-full flex-shrink-0 flex items-center justify-between gap-1.5 bg-white border border-gray-200 border-r-0 rounded-l-xl px-3 py-2.5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#004771]/20 cursor-pointer min-w-[88px] max-w-[104px] transition-all select-none"
       >
         <span className="text-xs sm:text-sm font-bold text-[#0B1E3D] flex items-center gap-1.5 truncate">
           <span className="text-base leading-none">{selectedCountry.flag}</span>
@@ -170,8 +187,17 @@ export default function CountryPhoneInput({
         value={phoneNumber}
         onChange={(e) => handlePhoneChange(e.target.value)}
         placeholder={placeholder}
-        className={`flex-1 min-w-0 w-full bg-white border border-gray-200 rounded-r-xl px-3.5 py-3 text-xs sm:text-sm text-[#0B1E3D] placeholder:text-gray-400 focus:outline-none focus:border-[#004771] focus:ring-2 focus:ring-[#E0F2FE] transition-all shadow-2xs ${inputClassName}`}
+        maxLength={selectedCountry.maxDigits}
+        inputMode="numeric"
+        pattern={`[0-9]{${selectedCountry.maxDigits}}`}
+        title={`Enter exactly ${selectedCountry.maxDigits} digits`}
+        className={`flex-1 min-w-0 w-full bg-white border border-gray-200 rounded-r-xl px-3 py-2.5 text-xs sm:text-sm text-[#0B1E3D] placeholder:text-gray-400 focus:outline-none focus:border-[#004771] focus:ring-2 focus:ring-[#E0F2FE] transition-all shadow-2xs ${inputClassName}`}
       />
+      </div>
+      {/* Inline validation error */}
+      {phoneError && (
+        <p className="text-[10px] text-red-500 font-medium mt-0.5 ml-0.5">{phoneError}</p>
+      )}
     </div>
   )
 }

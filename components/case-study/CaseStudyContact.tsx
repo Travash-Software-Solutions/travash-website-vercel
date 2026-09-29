@@ -90,8 +90,8 @@ export default function CaseStudyContact({
               transition={{ duration: 0.6, delay: 0.1 }}
               className="lg:col-span-6"
             >
-              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xs border border-gray-100 w-full">
-                <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+              <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-xs border border-gray-100 w-full">
+                <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-2">
                   {/* Honeypot field for bot spam protection */}
                   <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
                     <label htmlFor="cs-website">Website</label>
@@ -105,8 +105,8 @@ export default function CaseStudyContact({
                   </div>
 
                   {/* Name */}
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="cs-name" className="text-xs font-semibold text-gray-700">
+                  <div className="flex flex-col gap-0.5">
+                    <label htmlFor="cs-name" className="text-[10px] font-semibold text-gray-600">
                       Name
                     </label>
                     <input
@@ -115,13 +115,13 @@ export default function CaseStudyContact({
                       type="text"
                       required
                       placeholder="Enter Name"
-                      className="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#003865] transition-colors"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-3 py-2.5 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#003865] transition-colors"
                     />
                   </div>
 
                   {/* Phone */}
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="cs-phone" className="text-xs font-semibold text-gray-700">
+                  <div className="flex flex-col gap-0.5">
+                    <label htmlFor="cs-phone" className="text-[10px] font-semibold text-gray-600">
                       Phone Number
                     </label>
                     <CountryPhoneInput
@@ -132,8 +132,8 @@ export default function CaseStudyContact({
                   </div>
 
                   {/* Email */}
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="cs-email" className="text-xs font-semibold text-gray-700">
+                  <div className="flex flex-col gap-0.5">
+                    <label htmlFor="cs-email" className="text-[10px] font-semibold text-gray-600">
                       Email
                     </label>
                     <input
@@ -142,22 +142,22 @@ export default function CaseStudyContact({
                       type="email"
                       required
                       placeholder="Enter Email"
-                      className="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#003865] transition-colors"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-3 py-2.5 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#003865] transition-colors"
                     />
                   </div>
 
                   {/* Message */}
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="cs-message" className="text-xs font-semibold text-gray-700">
+                  <div className="flex flex-col gap-0.5">
+                    <label htmlFor="cs-message" className="text-[10px] font-semibold text-gray-600">
                       Message
                     </label>
                     <textarea
                       id="cs-message"
                       name="message"
-                      rows={3}
+                      rows={2}
                       required
                       placeholder="Enter Message"
-                      className="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#003865] resize-none transition-colors"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-3 py-2.5 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#003865] resize-none transition-colors"
                     />
                   </div>
 
@@ -165,7 +165,7 @@ export default function CaseStudyContact({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#003865] hover:bg-[#002847] disabled:bg-gray-400 text-white font-bold py-3 rounded-lg text-xs uppercase tracking-wider transition-colors shadow-xs mt-1"
+                    className="w-full bg-[#003865] hover:bg-[#002847] disabled:bg-gray-400 text-white font-semibold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors shadow-xs mt-1"
                   >
                     {isSubmitting ? 'Submitting...' : 'SUBMIT'}
                   </button>

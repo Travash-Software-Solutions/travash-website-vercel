@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Compass, LineChart, ShieldCheck } from 'lucide-react'
@@ -18,6 +18,22 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [submittedName, setSubmittedName] = useState('')
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Auto-reset form 10 seconds after successful submission
+  useEffect(() => {
+    if (isSubmitted) {
+      resetTimerRef.current = setTimeout(() => {
+        setIsSubmitted(false)
+        setSubmittedName('')
+        setFormState({ name: '', email: '', phone: '', message: '', website: '' })
+      }, 10000)
+    }
+    return () => {
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current)
+    }
+  }, [isSubmitted])
 
   if (!cta) return null
 
@@ -46,6 +62,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
 
       const data = await res.json()
       if (res.ok && data.success !== false) {
+        setSubmittedName(formState.name.trim().split(/\s+/)[0] || 'there')
         setIsSubmitted(true)
       } else {
         setErrorMessage(data.message || data.error || 'Failed to submit request. Please try again.')
@@ -56,6 +73,9 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
       setIsSubmitting(false)
     }
   }
+
+  // Extract first name for personalised success message
+  const firstName = submittedName || formState.name.trim().split(/\s+/)[0] || 'there'
 
   const features = cta.features || [
     {
@@ -160,7 +180,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
                     Client Success
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
-                    Sneha Sharma - Client Success
+                    {isSubmitted ? `${firstName} – Client Success` : 'Sneha Sharma – Client Success'}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 mt-0.5">
                     You’re in the right place – let’s talk!
@@ -172,8 +192,9 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
                 <div className="p-6 rounded-2xl bg-[#F0FDF4] border border-[#BBF7D0] text-center">
                   <h4 className="text-lg font-bold text-[#166534] mb-1">Message Sent!</h4>
                   <p className="text-xs sm:text-sm text-[#15803D]">
-                    Thank you! Sneha Sharma and our engineering team will reach out within 24 hours.
+                    Hi {firstName}! Our engineering team will reach out to you within 24 hours.
                   </p>
+                  <p className="text-[10px] text-[#166534]/70 mt-3">Form will reset in a few seconds...</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -202,7 +223,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. John Doe"
+                      placeholder="First Name"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 text-sm focus:outline-none focus:border-[#066095] focus:ring-1 focus:ring-[#066095]"
@@ -217,7 +238,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
                       <input
                         type="email"
                         required
-                        placeholder="john@company.com"
+                        placeholder="Enter Email"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 text-sm focus:outline-none focus:border-[#066095] focus:ring-1 focus:ring-[#066095]"
