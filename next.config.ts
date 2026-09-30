@@ -103,6 +103,18 @@ const nextConfig: NextConfig = {
 
     return defaultRedirects
   },
+  async rewrites() {
+    return [
+      {
+        source: '/travash-landing',
+        destination: '/travash-landing/index.html',
+      },
+      {
+        source: '/landing',
+        destination: '/travash-landing/index.html',
+      },
+    ]
+  },
 }
 
 export default nextConfig
