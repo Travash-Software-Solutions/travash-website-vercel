@@ -55,6 +55,7 @@ const DEFAULT_MENU_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about-us' },
   { label: 'Services', href: '/services' },
+  { label: 'Industries', href: '/industries' },
   { label: 'Technologies', href: '/technologies' },
   { label: 'Works', href: '/portfolio' },
   { label: 'Careers', href: '/career' },
