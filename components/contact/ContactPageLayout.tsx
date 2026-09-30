@@ -141,14 +141,8 @@ export default function ContactPageLayout({
                   <div className="p-3.5 rounded-xl bg-white border border-gray-200/80 hover:border-[#004771]/40 transition-all shadow-2xs group">
                     <div className="flex items-center justify-between gap-3 mb-2">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-lg bg-[#F0F7FF] border border-[#004771]/15 p-1.5 flex items-center justify-center flex-shrink-0">
-                          <Image
-                            src="/casestudy-img/New-latest-logo.svg"
-                            alt="Travash Logo"
-                            width={32}
-                            height={32}
-                            className="object-contain w-full h-full"
-                          />
+                        <div className="w-10 h-10 rounded-xl bg-[#E0F2FE] border border-[#004771]/20 flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-5 h-5 text-[#004771]" />
                         </div>
                         <div className="min-w-0">
                           <div className="text-xs font-extrabold text-[#0B1E3D] truncate">
@@ -182,18 +176,12 @@ export default function ContactPageLayout({
                   <div className="p-3.5 rounded-xl bg-white border border-gray-200/80 hover:border-[#0D9488]/40 transition-all shadow-2xs group">
                     <div className="flex items-center justify-between gap-3 mb-2">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-lg bg-[#F0F7FF] border border-[#004771]/15 p-1.5 flex items-center justify-center flex-shrink-0">
-                          <Image
-                            src="/casestudy-img/New-latest-logo.svg"
-                            alt="Travash Logo"
-                            width={32}
-                            height={32}
-                            className="object-contain w-full h-full"
-                          />
+                        <div className="w-10 h-10 rounded-xl bg-[#CCFBF1] border border-[#0D9488]/20 flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-5 h-5 text-[#0D9488]" />
                         </div>
                         <div className="min-w-0">
                           <div className="text-xs font-extrabold text-[#0B1E3D] truncate">
-                              Talent Acquisition &middot; Sachin
+                            Recruitments &ndash; Travash
                           </div>
                           <div className="text-[11px] font-semibold text-[#0D9488]">
                             Talent Acquisition &middot; Sachin
@@ -223,14 +211,8 @@ export default function ContactPageLayout({
                   <div className="p-3.5 rounded-xl bg-white border border-gray-200/80 hover:border-[#D97706]/40 transition-all shadow-2xs group">
                     <div className="flex items-center justify-between gap-3 mb-2">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-lg bg-[#FFFBEB] border border-[#D97706]/20 p-1 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                          <Image
-                            src="/images/services/i4c.png"
-                            alt="I4C Indian Cyber Crime Coordination Centre Logo"
-                            width={36}
-                            height={36}
-                            className="object-contain w-full h-full"
-                          />
+                        <div className="w-10 h-10 rounded-xl bg-[#FEF3C7] border border-[#D97706]/20 flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-5 h-5 text-[#B45309]" />
                         </div>
                         <div className="min-w-0">
                           <div className="text-xs font-extrabold text-[#0B1E3D] truncate">
