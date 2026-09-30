@@ -164,26 +164,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const recipientEmails = NOTIFICATION_RECIPIENTS
-    const smtpUser = process.env.SMTP_USER || 'leads.travash@gmail.com'
-    const smtpPass = process.env.SMTP_PASSWORD || process.env.SMTP_PASS
-
-    const hasOAuth2 =
-      Boolean(process.env.MICROSOFT_CLIENT_ID) &&
-      Boolean(process.env.MICROSOFT_CLIENT_SECRET) &&
-      process.env.MICROSOFT_CLIENT_SECRET !== 'YOUR_CLIENT_SECRET'
-
-    if (!smtpPass && !hasOAuth2) {
-      console.error('⚠️ Email service credentials missing in environment.')
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Email service configuration incomplete.',
-          message: 'Unable to submit enquiry at this moment. Please contact us directly.',
-        },
-        { status: 500 }
-      )
-    }
+    let sanitySaved = false
 
     // 1. SAVE SUBMISSION TO SANITY CMS LISTING
     if (writeClient) {
@@ -200,6 +181,7 @@ export async function POST(request: NextRequest) {
           submittedAt: new Date().toISOString(),
           status: 'New',
         })
+        sanitySaved = true
         console.log(`✅ Saved enquiry submission from ${email} to Sanity CMS.`)
       } catch (sanityErr) {
         console.warn('⚠️ Sanity CMS write warning:', sanityErr)
@@ -207,6 +189,8 @@ export async function POST(request: NextRequest) {
     }
 
     // 2. DISPATCH MINIMAL HTML EMAIL WITH TRAVASH LOGO
+    const recipientEmails = NOTIFICATION_RECIPIENTS
+    const smtpUser = process.env.SMTP_USER || 'leads.travash@gmail.com'
     const emailSubject = `New Website Enquiry - ${name}${subject ? ` (${subject})` : ''}`
 
     const plainTextMessage = [
@@ -238,17 +222,18 @@ export async function POST(request: NextRequest) {
       clientIp,
     })
 
-    await sendEnquiryEmail({
-      from: `"Travash Website" <${smtpUser}>`,
-      to: recipientEmails,
-      replyTo: email,
-      subject: emailSubject,
-      text: plainTextMessage,
-      html: htmlMessage,
-    })
-
-    // 3. SEND AUTOMATED THANK YOU CONFIRMATION EMAIL TO THE USER
     try {
+      await sendEnquiryEmail({
+        from: `"Travash Website" <${smtpUser}>`,
+        to: recipientEmails,
+        replyTo: email,
+        subject: emailSubject,
+        text: plainTextMessage,
+        html: htmlMessage,
+      })
+      console.log(`📧 Notification email sent to ${recipientEmails}`)
+
+      // 3. SEND AUTOMATED THANK YOU CONFIRMATION EMAIL TO THE USER
       const userThankYouHtml = generateUserThankYouEmailHtml({
         name,
         type: 'enquiry',
@@ -262,8 +247,8 @@ export async function POST(request: NextRequest) {
         html: userThankYouHtml,
       })
       console.log(`📧 User thank-you confirmation sent to ${email}`)
-    } catch (thankYouErr) {
-      console.warn('⚠️ User thank-you email dispatch warning:', thankYouErr)
+    } catch (mailErr) {
+      console.warn('⚠️ Email dispatch warning (submission still saved):', mailErr)
     }
 
     return NextResponse.json({

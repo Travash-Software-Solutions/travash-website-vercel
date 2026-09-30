@@ -111,6 +111,11 @@ async function sendViaMicrosoftGraph(accessToken: string, options: MailOptions):
   const senderEmail = process.env.SMTP_USER || 'ravi.belpade@travash.com'
   const endpoint = `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(senderEmail)}/sendMail`
 
+  const recipients = options.to
+    .split(',')
+    .map((e) => ({ emailAddress: { address: e.trim() } }))
+    .filter((r) => r.emailAddress.address.length > 0)
+
   const payload = {
     message: {
       subject: options.subject,
@@ -118,13 +123,7 @@ async function sendViaMicrosoftGraph(accessToken: string, options: MailOptions):
         contentType: 'HTML',
         content: options.html,
       },
-      toRecipients: [
-        {
-          emailAddress: {
-            address: options.to,
-          },
-        },
-      ],
+      toRecipients: recipients,
       replyTo: options.replyTo
         ? [
             {

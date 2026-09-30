@@ -5,7 +5,7 @@ export const NOTIFICATION_RECIPIENTS = [
   'leads.travash@gmail.com',
 ].join(', ')
 
-export const TRAVASH_LOGO_URL = 'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg'
+export const TRAVASH_LOGO_URL = 'https://travash.com/travash-latest-logo.svg'
 
 function escapeHtml(text: string): string {
   return text
