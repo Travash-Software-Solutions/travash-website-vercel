@@ -97,8 +97,11 @@ export default function BlogSection({
                 key={post._id || idx}
                 className="group flex flex-col bg-white overflow-hidden transition-all duration-300"
               >
-                {/* Visual */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 rounded-xl">
+                {/* Visual Thumbnail Link */}
+                <Link
+                  href={`/blogs/${postSlug}`}
+                  className="relative aspect-[16/10] overflow-hidden bg-gray-100 rounded-xl block group-hover:opacity-95 transition-opacity cursor-pointer"
+                >
                   <Image
                     src={img!}
                     alt={post.title}
@@ -106,13 +109,15 @@ export default function BlogSection({
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                </div>
+                </Link>
 
                 {/* Body */}
                 <div className="pt-5 flex flex-col gap-3 flex-1 justify-between">
-                  <h3 className="text-base sm:text-lg font-bold text-[#0B4785] leading-snug transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
+                  <Link href={`/blogs/${postSlug}`} className="hover:underline">
+                    <h3 className="text-base sm:text-lg font-bold text-[#0B4785] leading-snug transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </Link>
 
                   <Link
                     href={`/blogs/${postSlug}`}

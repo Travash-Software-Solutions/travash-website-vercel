@@ -124,6 +124,14 @@ export const blogSection = defineType({
       initialValue: 'Latest Insights from Travash',
     }),
     defineField({
+      name: 'selectedPosts',
+      title: 'Featured Posts (Select up to 3 posts for Home Page)',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'post' }] }],
+      validation: (rule) => rule.max(3),
+      description: 'Select up to 3 specific blog posts to highlight on the Home Page blog section. If left empty, featured & latest posts will be displayed automatically.',
+    }),
+    defineField({
       name: 'ctaLabel',
       title: 'View All CTA Label',
       type: 'string',

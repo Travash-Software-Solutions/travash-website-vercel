@@ -66,10 +66,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function getPageData() {
   try {
-    const [pageData, posts] = await Promise.all([
+    const [pageData, recentPosts] = await Promise.all([
       client.fetch(homePageQuery),
       client.fetch(recentPostsQuery),
     ])
+
+    const selectedPosts = pageData?.homePage?.blog?.selectedPosts?.filter(Boolean) || []
+    const posts = selectedPosts.length > 0 ? selectedPosts : (recentPosts || [])
+
     return { pageData, posts }
   } catch {
     // Return null data if Sanity is not configured — fallback to defaults in components
