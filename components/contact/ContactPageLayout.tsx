@@ -196,7 +196,7 @@ export default function ContactPageLayout({
                               Talent Acquisition &middot; Sachin
                           </div>
                           <div className="text-[11px] font-semibold text-[#0D9488]">
-                            {/* Talent Acquisition &middot; Sachin */}
+                            Talent Acquisition &middot; Sachin
                           </div>
                         </div>
                       </div>
