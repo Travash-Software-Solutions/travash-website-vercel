@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 interface Testimonial {
   quote: string
@@ -18,7 +19,6 @@ const AUTHOR_PHOTOS: Record<string, string> = {
   'senior officer': 'https://travash.com/wp-content/uploads/2026/08/i4c-travash-client.png',
   'national coordinator': 'https://travash.com/wp-content/uploads/2026/08/i4c-travash-client.png',
   'senior leadership & national coordinator': 'https://travash.com/wp-content/uploads/2026/08/i4c-travash-client.png',
-
 }
 
 const TESTIMONIALS: Testimonial[] = [
@@ -43,7 +43,6 @@ const TESTIMONIALS: Testimonial[] = [
     authorTitle: 'Managing Director · SWD Group',
     authorPhoto: 'https://travash.com/wp-content/uploads/2026/08/swd-ross-travash-client.webp',
   },
- 
 ]
 
 interface SanityTestimonial {
@@ -142,32 +141,40 @@ export default function Testimonials({ data }: { data?: TestimonialsSectionData 
           onTouchEnd={handleTouchEnd}
           className="bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-10 lg:p-14 shadow-[0_4px_25px_rgba(0,0,0,0.04)] border border-gray-200/80 transition-all duration-300"
         >
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Rectangular photo */}
-            <div className="lg:col-span-4 relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-sm border border-gray-100 flex items-center justify-center">
-              <Image
-                key={current.authorPhoto}
-                src={current.authorPhoto || 'https://travash.com/wp-content/uploads/2026/08/imran-pixl-client-dubai-1.webp'}
-                alt={current.authorName}
-                fill
-                className="object-cover transition-opacity duration-500"
-                sizes="(max-width: 1024px) 100vw, 380px"
-              />
-            </div>
-
-            {/* Right: Quote and author credentials */}
-            <div className="lg:col-span-8 flex flex-col justify-between gap-6">
-              <p className="text-gray-700 text-sm sm:text-base lg:text-[17px] leading-relaxed font-normal transition-all duration-300">
-                &ldquo;{current.quote.replace(/^["'\s]+|["'\s]+$/g, '')}&rdquo;
-              </p>
-              <div className="pt-2">
-                <p className="font-bold text-[#0B4785] text-lg sm:text-xl">{current.authorName}</p>
-                <p className="text-sm text-gray-500 font-normal mt-0.5">
-                  {current.authorTitle}
-                </p>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIdx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1.0] }}
+              className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+            >
+              {/* Left: Rectangular photo */}
+              <div className="lg:col-span-4 relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-sm border border-gray-100 flex items-center justify-center">
+                <Image
+                  src={current.authorPhoto || 'https://travash.com/wp-content/uploads/2026/08/imran-pixl-client-dubai-1.webp'}
+                  alt={current.authorName}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 380px"
+                />
               </div>
-            </div>
-          </div>
+
+              {/* Right: Quote and author credentials */}
+              <div className="lg:col-span-8 flex flex-col justify-between gap-6">
+                <p className="text-gray-700 text-sm sm:text-base lg:text-[17px] leading-relaxed font-normal">
+                  &ldquo;{current.quote.replace(/^["'\s]+|["'\s]+$/g, '')}&rdquo;
+                </p>
+                <div className="pt-2">
+                  <p className="font-bold text-[#0B4785] text-lg sm:text-xl">{current.authorName}</p>
+                  <p className="text-sm text-gray-500 font-normal mt-0.5">
+                    {current.authorTitle}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Interactive Navigation: Prev Arrow, Pagination Dots, Next Arrow */}

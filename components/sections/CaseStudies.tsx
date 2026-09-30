@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
 
 interface Outcome {
   value: string
@@ -259,95 +260,104 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
           className="border border-gray-200/80 rounded-[24px] sm:rounded-[28px] p-5 sm:p-8 lg:p-10 shadow-[0_6px_30px_rgba(0,0,0,0.06)]"
           style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%)' }}
         >
-          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-start">
-            {/* Left Column: Clean Image Link */}
-            <Link
-              href={current.ctaHref}
-              className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm border border-gray-100 group cursor-pointer"
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIdx}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1.0] }}
+              className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-start"
             >
-              <Image
-                src={current.image || '/casestudy-thumbs/Satyaapan.png'}
-                alt={current.projectName}
-                fill
-                unoptimized
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 450px"
-              />
-            </Link>
+              {/* Left Column: Clean Image Link */}
+              <Link
+                href={current.ctaHref}
+                className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm border border-gray-100 group cursor-pointer"
+              >
+                <Image
+                  src={current.image || '/casestudy-thumbs/Satyaapan.png'}
+                  alt={current.projectName}
+                  fill
+                  unoptimized
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 450px"
+                />
+              </Link>
 
-            {/* Right Column: Case Study Details & 2x2 Outcome Grid */}
-            <div className="lg:col-span-7 flex flex-col justify-between">
-              <div>
-                <Link href={current.ctaHref} className="hover:underline">
-                  <h3 className="text-xl sm:text-2xl lg:text-[28px] font-[600] text-[#0B4785] tracking-tight break-words leading-snug">
-                    {current.projectName}
-                  </h3>
-                </Link>
-                <p className="text-gray-500 text-[13px] sm:text-[14px] font-normal mt-1.5 mb-5 sm:mb-6 whitespace-pre-line">
-                  {current.clientType}
-                </p>
+              {/* Right Column: Case Study Details & 2x2 Outcome Grid */}
+              <div className="lg:col-span-7 flex flex-col justify-between">
+                <div>
+                  <Link href={current.ctaHref} className="hover:underline">
+                    <h3 className="text-xl sm:text-2xl lg:text-[28px] font-[600] text-[#0B4785] tracking-tight break-words leading-snug">
+                      {current.projectName}
+                    </h3>
+                  </Link>
+                  <p className="text-gray-500 text-[13px] sm:text-[14px] font-normal mt-1.5 mb-5 sm:mb-6 whitespace-pre-line">
+                    {current.clientType}
+                  </p>
 
-                <p className="text-[11px] sm:text-xs font-bold text-gray-700 uppercase tracking-widest mb-3">
-                  Key Outcomes
-                </p>
+                  <p className="text-[11px] sm:text-xs font-bold text-gray-700 uppercase tracking-widest mb-3">
+                    Key Outcomes
+                  </p>
 
-                {/* 2x2 Outcome Grid */}
-                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-5 sm:mb-7">
-                  {current.outcomes.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className={`${item.bg || 'bg-gray-50'} border ${item.border || 'border-gray-200'
-                        } rounded-xl p-3 sm:p-4 flex flex-col justify-center`}
+                  {/* 2x2 Outcome Grid */}
+                  <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-5 sm:mb-7">
+                    {current.outcomes.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className={`${item.bg || 'bg-gray-50'} border ${item.border || 'border-gray-200'
+                          } rounded-xl p-3 sm:p-4 flex flex-col justify-center`}
+                      >
+                        <span className="text-sm sm:text-base font-bold text-gray-900 leading-tight">
+                          {item.value}
+                        </span>
+                        <span className="text-[11px] sm:text-[12px] text-gray-500 mt-0.5 sm:mt-1 leading-snug font-normal">
+                          {item.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Row: CTA + Slider Nav */}
+                <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 pt-2">
+                  <Link
+                    href={current.ctaHref}
+                    className="inline-flex items-center justify-center bg-[#0B4785] hover:bg-[#083566] text-white font-semibold px-7 py-3 rounded-[10px] text-[14px] transition-all duration-200 shadow-sm w-full sm:w-auto"
+                  >
+                    {current.ctaLabel || 'View Case Study'}
+                  </Link>
+
+                  <div className="flex items-center gap-2.5">
+                    <button
+                      onClick={prevSlide}
+                      className="w-10 h-10 rounded-full border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                      aria-label="Previous case study"
                     >
-                      <span className="text-sm sm:text-base font-bold text-gray-900 leading-tight">
-                        {item.value}
-                      </span>
-                      <span className="text-[11px] sm:text-[12px] text-gray-500 mt-0.5 sm:mt-1 leading-snug font-normal">
-                        {item.label}
-                      </span>
-                    </div>
-                  ))}
+                      <Image
+                        src="/home-img/Group 1000003288.png"
+                        alt="Previous"
+                        width={40}
+                        height={40}
+                      />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="w-10 h-10 rounded-full border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                      aria-label="Next case study"
+                    >
+                      <Image
+                        src="/home-img/Group 1000003287-1.png"
+                        alt="Next"
+                        width={40}
+                        height={40}
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
-
-              {/* Bottom Row: CTA + Slider Nav */}
-              <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 pt-2">
-                <Link
-                  href={current.ctaHref}
-                  className="inline-flex items-center justify-center bg-[#0B4785] hover:bg-[#083566] text-white font-semibold px-7 py-3 rounded-[10px] text-[14px] transition-all duration-200 shadow-sm w-full sm:w-auto"
-                >
-                  {current.ctaLabel || 'View Case Study'}
-                </Link>
-
-                <div className="flex items-center gap-2.5">
-                  <button
-                    onClick={prevSlide}
-                    className="w-10 h-10 rounded-full border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                    aria-label="Previous case study"
-                  >
-                    <Image
-                      src="/home-img/Group 1000003288.png"
-                      alt="Previous"
-                      width={40}
-                      height={40}
-                    />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    className="w-10 h-10 rounded-full border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                    aria-label="Next case study"
-                  >
-                    <Image
-                      src="/home-img/Group 1000003287-1.png"
-                      alt="Next"
-                      width={40}
-                      height={40}
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
