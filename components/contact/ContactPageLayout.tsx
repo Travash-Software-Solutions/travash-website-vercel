@@ -73,8 +73,8 @@ export default function ContactPageLayout({
       <section className="py-12 sm:py-16 lg:py-20 bg-white font-['Plus_Jakarta_Sans',sans-serif]">
         <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
-            {/* Left Column: Direct Contact & Global Offices */}
-            <div className="lg:col-span-5 space-y-8">
+            {/* Left Column: Direct Contact & Global Offices (order-2 on mobile, order-1 on desktop) */}
+            <div className="order-2 lg:order-1 lg:col-span-5 space-y-8">
               <div>
                 <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
                   DIRECT CONSULTATION CHANNELS
@@ -262,8 +262,8 @@ export default function ContactPageLayout({
               <OfficeLocations offices={offices} />
             </div>
 
-            {/* Right Column: Interactive Contact Form */}
-            <div className="lg:col-span-7">
+            {/* Right Column: Interactive Contact Form (order-1 on mobile, order-2 on desktop) */}
+            <div className="order-1 lg:order-2 lg:col-span-7">
               <div className="bg-[#F8FAFC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_12px_40px_rgba(11,71,133,0.06)] border border-gray-200/90 relative overflow-hidden">
                 {/* Decorative subtle accent gradient bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#004771] via-[#14B8A6] to-[#004771]" />
