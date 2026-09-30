@@ -1,0 +1,7 @@
+# Ignore system/IDE files
+.DS_Store
+Thumbs.db
+\#clip*
+
+# Ignore log files
+*.log
