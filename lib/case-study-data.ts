@@ -2996,6 +2996,174 @@ export const DEFAULT_DINEDESK_DATA: CaseStudyData = {
 }
 
 // ----------------------------------------------------------------------
+// 11. RadiantSA: Smart Healthcare Data Platform
+// ----------------------------------------------------------------------
+export const DEFAULT_RADIANTSA_DATA: CaseStudyData = {
+  _id: 'caseStudy-radiantsa',
+  title: 'Smart Healthcare Data Platform: Clinical CTMS & Health Intelligence',
+  slug: { current: 'radiantsa' },
+  eyebrow: 'CASE STUDY',
+  category: 'Healthcare Cloud & Clinical AI',
+  industry: 'Healthcare & Life Sciences',
+  client: 'Global Health Network',
+  location: 'Global',
+  shortDescription:
+    'Connected healthcare intelligence platform for modern clinical operations, processing 3.5M+ patient records with HIPAA-compliant uptime and real-time clinical diagnostics.',
+  heroImage: { asset: { url: '/casestudy-thumbs/rediantsage.png' } },
+  featureImage: '/casestudy-thumbs/rediantsage.png',
+  projectMeta: [
+    { label: 'CLIENT', value: 'Global Health Network' },
+    { label: 'SOLUTION', value: 'Smart Healthcare Data Platform' },
+    { label: 'INDUSTRY', value: 'Healthcare & Life Sciences' },
+    {
+      label: 'CAPABILITIES',
+      value: 'Clinical CTMS • HIPAA Cloud • Real-Time Analytics • Patient Data Ingestion',
+    },
+  ],
+  metrics: [
+    {
+      value: '3.5M+',
+      label: 'Patient records analyzed',
+      description: 'Real-time multi-hospital diagnostic data processing',
+    },
+    {
+      value: '99.9%',
+      label: 'HIPAA compliant uptime',
+      description: 'Zero audit defects across clinical data pipelines',
+    },
+    {
+      value: 'Real-Time Analytics',
+      label: 'Clinical diagnostic support',
+      description: 'Instant EHR cross-referencing and diagnostic aids',
+    },
+    {
+      value: '40+ Hospitals',
+      label: 'Global Health Network',
+      description: 'Integrated across multi-center trial networks',
+    },
+  ],
+  executiveSummary: {
+    title: 'Executive Summary',
+    subtitle: 'Modernizing Clinical Operations with Enterprise Healthcare Data Intelligence',
+    paragraphs: [
+      'Managing patient records across multi-center hospital networks requires zero-latency data processing, bulletproof HIPAA compliance, and real-time analytical insights for clinical staff.',
+      'Travash Software Solutions engineered the Smart Healthcare Data Platform—a high-performance clinical trial and health analytics solution that unifies disparate patient data feeds, automates diagnostic workflows, and ensures 99.9% uptime across 40+ integrated hospitals.',
+    ],
+  },
+  challenge: {
+    title: 'The Challenge',
+    subtitle: 'Fragmented Clinical Records & Complex Compliance Constraints',
+    content: 'The clinical network faced critical operational friction:',
+    points: [
+      'Fragmented Patient Records: EHR data was trapped in hospital-specific legacy silos.',
+      'Manual Compliance Auditing: Ensuring HIPAA and FDA regulatory compliance required heavy manual overhead.',
+      'Delayed Diagnostic Intelligence: Doctors lacked real-time analytical cross-referencing during patient care.',
+    ],
+    pointsLabel: 'CLINICAL TEAMS NEEDED TO SOLVE :',
+    takeaway: 'The challenge was to unify patient data streams while adhering to stringent HIPAA data privacy standards.',
+  },
+  complexity: {
+    title: 'Engineering Complexity',
+    intro: 'Building a zero-latency clinical intelligence platform required solving strict healthcare constraints:',
+    items: [
+      {
+        title: 'HIPAA & FDA COMPLIANCE',
+        description: 'End-to-end encryption for patient PHI at rest and in transit.',
+      },
+      {
+        title: 'REAL-TIME DATA INGESTION',
+        description: 'Processing high-frequency biometric streams from 3.5M+ patient records.',
+      },
+      {
+        title: 'MULTI-CENTER SYNCHRONIZATION',
+        description: 'Unified data model syncing across 40+ hospitals and research centers.',
+      },
+    ],
+  },
+  approach: {
+    title: 'Travash Approach',
+    intro: 'Unified Cloud Architecture with Built-In HIPAA Compliance',
+    steps: [
+      {
+        stepNumber: '01',
+        title: 'Data Pipeline Consolidation',
+        description: 'Build automated FHIR/HL7 data connectors to ingest patient records securely.',
+      },
+      {
+        stepNumber: '02',
+        title: 'HIPAA Cloud Isolation',
+        description: 'Architect isolated AWS/Azure cloud environments with end-to-end PHI encryption.',
+      },
+      {
+        stepNumber: '03',
+        title: 'Real-Time Analytics Engine',
+        description: 'Deploy sub-second clinical analytics dashboard for doctors and researchers.',
+      },
+      {
+        stepNumber: '04',
+        title: 'Automated Compliance Telemetry',
+        description: 'Continuous audit logging ensuring zero regulatory defects.',
+      },
+    ],
+  },
+  solution: {
+    title: 'The Solution',
+    intro: 'End-to-End Smart Healthcare Intelligence Engine',
+    items: [
+      {
+        title: 'Unified Patient Data Hub',
+        description: 'Consolidates 3.5M+ EHR files into a single, searchable clinical knowledge base.',
+      },
+      {
+        title: 'Real-Time Diagnostic Analytics',
+        description: 'Sub-second clinical insights and diagnostic assistance for medical professionals.',
+      },
+      {
+        title: 'Automated Audit Telemetry',
+        description: '100% compliant data pipelines with real-time audit logging and encryption.',
+      },
+    ],
+  },
+  solutionArchitecture: {
+    title: 'Solution Architecture',
+    intro: 'Multi-Hospital Ingestion → FHIR Data Pipeline → HIPAA Cloud Analytics → Real-Time Clinical Dashboard.',
+    image: { asset: { url: '/casestudy-img/arctature-daigram.webp' } },
+    caption: 'Figure: Smart Healthcare Data Platform Cloud Architecture',
+  },
+  technologyStack: [
+    {
+      category: 'Cloud Infrastructure',
+      technologies: ['AWS HIPAA Cloud', 'Docker', 'Kubernetes'],
+    },
+    {
+      category: 'Data & Analytics',
+      technologies: ['PostgreSQL', 'Apache Spark', 'Python', 'FastAPI'],
+    },
+    {
+      category: 'Frontend Platform',
+      technologies: ['React', 'Next.js', 'Tailwind CSS'],
+    },
+  ],
+  impact: {
+    title: 'Measurable Business Impact',
+    subtitle: 'Transforming Multi-Hospital Operations with Automated Healthcare Intelligence',
+    content: 'Operational efficiencies delivered immediate clarity across clinical teams and hospital networks.',
+    outcomes: [
+      '3.5M+ patient records analyzed seamlessly across 40+ global hospitals',
+      '99.9% HIPAA-compliant system uptime with zero audit defects',
+      'Sub-second query speeds for real-time clinical diagnostic support',
+      '60% reduction in administrative data entry overhead for clinical staff',
+    ],
+  },
+  nextStep: {
+    heading: 'The Next Step',
+    content: 'Looking to Modernize Healthcare Data Infrastructure or Clinical Workflows? Travash engineers scalable HIPAA-compliant solutions.',
+    primaryCTA: { label: 'Schedule Healthcare Tech Consultation', href: '#contact' },
+    secondaryCTA: { label: 'Explore AI & Data Architecture', href: '#contact' },
+  },
+}
+
+// ----------------------------------------------------------------------
 // Master Fallback Registry of all Reviewed Case Studies
 // ----------------------------------------------------------------------
 export const FALLBACK_CASE_STUDIES: Record<string, CaseStudyData> = {
@@ -3033,6 +3201,12 @@ export const FALLBACK_CASE_STUDIES: Record<string, CaseStudyData> = {
   // 10. DineDesk
   dinedesk: DEFAULT_DINEDESK_DATA,
   'dine-desk': DEFAULT_DINEDESK_DATA,
+
+  // 11. RadiantSA / Smart Healthcare Data Platform
+  radiantsa: DEFAULT_RADIANTSA_DATA,
+  radiantsage: DEFAULT_RADIANTSA_DATA,
+  'radiant-sage': DEFAULT_RADIANTSA_DATA,
+  'smart-healthcare-data-platform': DEFAULT_RADIANTSA_DATA,
 
   // Historical & CMS Slugs
   darpan: DEFAULT_DARPAN_DATA,

@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface Outcome {
   value: string
@@ -86,7 +85,7 @@ const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     ctaLabel: 'View Case Study',
-    ctaHref: '/portfolio/radiantsa',
+    ctaHref: '/case-studies/radiantsa',
   },
   {
     projectName: 'Digital Banking & Cyber Fraud Mitigation Platform',
@@ -144,6 +143,44 @@ const OUTCOME_STYLES = [
   { bg: 'bg-[#FAF0FF]', border: 'border-[#EED5FD]' },
 ]
 
+/**
+ * Resolves a case study's specific detail page route.
+ * Filters out generic listing pages like /work or /portfolio.
+ */
+function getDetailHref(rawHref?: string, projectName?: string): string {
+  const LIST_PAGES = ['/work', '/portfolio', '/case-studies', '/work/', '/portfolio/', '/case-studies/']
+  
+  if (rawHref && !LIST_PAGES.includes(rawHref.trim())) {
+    // If it's a specific slug route, return it directly
+    if (rawHref.startsWith('/case-studies/') || rawHref.startsWith('/portfolio/')) {
+      return rawHref
+    }
+  }
+
+  // Infer detail route from project name or raw href string
+  const str = `${projectName || ''} ${rawHref || ''}`.toLowerCase()
+  if (str.includes('passport') || str.includes('satya') || str.includes('verification')) {
+    return '/case-studies/satyapaan'
+  }
+  if (str.includes('health') || str.includes('radiant') || str.includes('medical') || str.includes('clinical')) {
+    return '/case-studies/radiantsa'
+  }
+  if (str.includes('bank') || str.includes('fraud') || str.includes('i4c') || str.includes('cyber')) {
+    return '/case-studies/i4c-bank-portal'
+  }
+  if (str.includes('voice') || str.includes('pixl') || str.includes('agent')) {
+    return '/case-studies/pixl'
+  }
+  if (str.includes('rental') || str.includes('direct') || str.includes('vacation')) {
+    return '/case-studies/direct-owners'
+  }
+  if (str.includes('ugo') || str.includes('supply') || str.includes('fleet')) {
+    return '/case-studies/ugo'
+  }
+
+  return '/case-studies/satyapaan'
+}
+
 export default function CaseStudies({ data }: { data?: CaseStudiesSectionData }) {
   const [currentIdx, setCurrentIdx] = useState(0)
 
@@ -151,6 +188,9 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
     data?.caseStudies && data.caseStudies.length > 0
       ? data.caseStudies.map((s, i) => {
         const fallback = CASE_STUDIES[i % CASE_STUDIES.length]
+        const rawHref = s.ctaHref || fallback.ctaHref
+        const detailHref = getDetailHref(rawHref, s.projectName || fallback.projectName)
+
         return {
           projectName: s.projectName || fallback.projectName,
           clientType: s.clientType || fallback.clientType,
@@ -164,11 +204,14 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
                 border: OUTCOME_STYLES[idx % OUTCOME_STYLES.length].border,
               }))
               : fallback.outcomes,
-          ctaLabel: s.ctaLabel || fallback.ctaLabel,
-          ctaHref: s.ctaHref || fallback.ctaHref,
+          ctaLabel: s.ctaLabel && s.ctaLabel !== 'View All' ? s.ctaLabel : 'View Case Study',
+          ctaHref: detailHref,
         }
       })
-      : CASE_STUDIES
+      : CASE_STUDIES.map((s) => ({
+        ...s,
+        ctaHref: getDetailHref(s.ctaHref, s.projectName),
+      }))
 
   const current = activeStudies[currentIdx % activeStudies.length]
   const heading = data?.heading || 'Built on Results, Not Promises'
@@ -217,24 +260,29 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
           style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%)' }}
         >
           <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-start">
-            {/* Left Column: Clean Image */}
-            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm border border-gray-100">
+            {/* Left Column: Clean Image Link */}
+            <Link
+              href={current.ctaHref}
+              className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm border border-gray-100 group cursor-pointer"
+            >
               <Image
                 src={current.image || '/casestudy-thumbs/Satyaapan.png'}
                 alt={current.projectName}
                 fill
                 unoptimized
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 450px"
               />
-            </div>
+            </Link>
 
             {/* Right Column: Case Study Details & 2x2 Outcome Grid */}
             <div className="lg:col-span-7 flex flex-col justify-between">
               <div>
-                <h3 className="text-xl sm:text-2xl lg:text-[28px] font-[600] text-[#0B4785] tracking-tight break-words leading-snug">
-                  {current.projectName}
-                </h3>
+                <Link href={current.ctaHref} className="hover:underline">
+                  <h3 className="text-xl sm:text-2xl lg:text-[28px] font-[600] text-[#0B4785] tracking-tight break-words leading-snug">
+                    {current.projectName}
+                  </h3>
+                </Link>
                 <p className="text-gray-500 text-[13px] sm:text-[14px] font-normal mt-1.5 mb-5 sm:mb-6 whitespace-pre-line">
                   {current.clientType}
                 </p>
@@ -265,7 +313,7 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
               {/* Bottom Row: CTA + Slider Nav */}
               <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 pt-2">
                 <Link
-                  href={current.ctaHref || '/work'}
+                  href={current.ctaHref}
                   className="inline-flex items-center justify-center bg-[#0B4785] hover:bg-[#083566] text-white font-semibold px-7 py-3 rounded-[10px] text-[14px] transition-all duration-200 shadow-sm w-full sm:w-auto"
                 >
                   {current.ctaLabel || 'View Case Study'}
@@ -305,3 +353,4 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
     </section>
   )
 }
+
