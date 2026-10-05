@@ -13,6 +13,7 @@ import Testimonials from '@/components/sections/Testimonials'
 import About from '@/components/sections/About'
 import Industries from '@/components/sections/Industries'
 import BlogSection from '@/components/sections/BlogSection'
+import LinkedInUpdates from '@/components/sections/LinkedInUpdates'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
 
@@ -112,6 +113,7 @@ export default async function HomePage() {
         <About data={homePage?.about} />
         <Industries data={homePage?.industries} />
         <BlogSection sectionData={homePage?.blog} posts={posts} />
+        <LinkedInUpdates />
         <Contact data={homePage?.contact} />
       </main>
       <Footer settings={siteSettings} />

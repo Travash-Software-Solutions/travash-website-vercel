@@ -13,6 +13,14 @@
   --header-height: 80px;
 }
 
+
+.text-gray-300,
+.text-gray-700,
+.text-gray-500
+{
+  color: #1a1a1a !important;
+}
+
 /* Base resets */
 *,
 *::before,
@@ -291,4 +299,14 @@ p {
 
 .text-\[\#14B8A6\] {
   color: #61ce70 !important;
+}
+
+/* Hide SociableKit Branding */
+.sk_branding,
+.sk-branding,
+.sk-watermark,
+.sk-pop-branding,
+.sk-ww-linkedin-page-post [href*="sociablekit.com"],
+.sk-ww-linkedin-page-post a.sk-branding {
+  display: none !important;
 }

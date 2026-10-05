@@ -176,7 +176,7 @@ export default async function ServiceDetailPage({
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: service.title,
-    description: service.shortDescription || service.hero?.subtitle,
+    description: service.shortDescription || service.hero?.description,
     provider: {
       '@type': 'Organization',
       name: 'Travash Software Solutions',
