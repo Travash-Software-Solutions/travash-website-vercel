@@ -76,7 +76,7 @@ export default function CareerBenefits({ data }: CareerBenefitsProps = {}) {
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {eyebrow}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight">
             {heading}
           </h2>
           <p className="text-sm sm:text-base text-gray-600 mt-3 leading-relaxed">
@@ -105,7 +105,7 @@ export default function CareerBenefits({ data }: CareerBenefitsProps = {}) {
                   <div className="w-12 h-12 rounded-xl bg-[#E0F2FE] text-[#004771] flex items-center justify-center mb-6">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#0B1E3D] mb-2">{benefit.title}</h3>
+                  <h3 className="text-lg font-bold text-[#121212] mb-2">{benefit.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
                 </div>
               </div>

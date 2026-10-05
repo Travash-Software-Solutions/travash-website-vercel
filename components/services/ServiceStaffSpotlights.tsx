@@ -60,7 +60,7 @@ export default function ServiceStaffSpotlights() {
           <span className="text-xs font-bold uppercase tracking-widest text-[#004771] block mb-2">
             CLIENT SUCCESS SPOTLIGHTS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#0B1E3D] tracking-tight leading-tight max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#121212] tracking-tight leading-tight max-w-2xl">
             How We Deliver Specialized Talent at Enterprise Scale
           </h2>
         </motion.div>
@@ -89,7 +89,7 @@ export default function ServiceStaffSpotlights() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base sm:text-lg font-bold text-[#0B1E3D] leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-[#121212] leading-snug">
                   {spot.title}
                 </h3>
 

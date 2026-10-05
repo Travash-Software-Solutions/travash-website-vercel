@@ -161,7 +161,7 @@ export default function TechnologyGrid({ technologies, categories: customCategor
             <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center mx-auto text-gray-400 mb-4">
               <Layers className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#0B1E3D] mb-1">No technologies found</h3>
+            <h3 className="text-base font-bold text-[#121212] mb-1">No technologies found</h3>
             <p className="text-xs sm:text-sm text-gray-500 mb-6">
               No technology matched &quot;{searchQuery || selectedCategory}&quot;.
             </p>

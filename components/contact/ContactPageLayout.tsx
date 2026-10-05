@@ -79,7 +79,7 @@ export default function ContactPageLayout({
                 <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
                   DIRECT CONSULTATION CHANNELS
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1E3D] tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#121212] tracking-tight mb-4">
                   Let&apos;s Build Something Extraordinary Together
                 </h2>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -255,7 +255,7 @@ export default function ContactPageLayout({
                     <Sparkles className="w-3 h-3 text-[#14B8A6]" />
                     <span>START A CONVERSATION</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B1E3D] tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#121212] tracking-tight">
                     Tell Us About Your Project
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 mt-1.5">

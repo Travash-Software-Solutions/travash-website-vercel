@@ -180,17 +180,17 @@ export const portfolioPortableTextComponents: PortableTextComponents = {
       </p>
     ),
     h2: ({ children }) => (
-      <h2 className="mt-10 mb-4 text-2xl md:text-3xl font-bold text-[#0B1E3D] tracking-tight border-b border-slate-100 pb-3">
+      <h2 className="mt-10 mb-4 text-2xl md:text-3xl font-bold text-[#121212] tracking-tight border-b border-slate-100 pb-3">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-8 mb-3 text-xl md:text-2xl font-bold text-[#0B1E3D] tracking-tight">
+      <h3 className="mt-8 mb-3 text-xl md:text-2xl font-bold text-[#121212] tracking-tight">
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mt-6 mb-2 text-lg md:text-xl font-semibold text-[#0B1E3D]">
+      <h4 className="mt-6 mb-2 text-lg md:text-xl font-semibold text-[#121212]">
         {children}
       </h4>
     ),

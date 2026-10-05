@@ -35,7 +35,7 @@ export default function MissionVision({ data }: MissionVisionProps) {
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {eyebrow}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1E3D] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#121212] tracking-tight">
             {heading}
           </h2>
         </div>

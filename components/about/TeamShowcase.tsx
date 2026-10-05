@@ -97,7 +97,7 @@ export default function TeamShowcase({ data, imageUrl }: TeamShowcaseProps) {
                     <Sparkles className="w-3.5 h-3.5 text-[#14B8A6]" />
                     <span>{badge}</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#0B1E3D] tracking-tight leading-tight">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#121212] tracking-tight leading-tight">
                     {heading}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">

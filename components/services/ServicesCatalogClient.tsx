@@ -259,7 +259,7 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
               <span>ENTERPRISE ENGINEERING CAPABILITIES</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#0B1E3D] tracking-tight leading-[1.15]  mb-6 max-w-4xl">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15]  mb-6 max-w-4xl">
               Engineering Rigor Meets Artificial Intelligence
             </h1>
 
@@ -371,7 +371,7 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
                         </div>
 
                         {/* Title & Description */}
-                        <h3 className="text-xl font-bold text-[#0B1E3D] group-hover:text-[#004771] transition-colors mb-2">
+                        <h3 className="text-xl font-bold text-[#121212] group-hover:text-[#004771] transition-colors mb-2">
                           {service.title}
                         </h3>
 
@@ -433,7 +433,7 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
               <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
                 THE TRAVASH ADVANTAGE
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight">
                 Why Global Enterprises Choose Travash
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mt-2">
@@ -446,7 +446,7 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
                 <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#004771] flex items-center justify-center mb-5 shadow-2xs">
                   <Headphones className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0B1E3D] mb-2">Direct Principal Architect Access</h3>
+                <h3 className="text-lg font-bold text-[#121212] mb-2">Direct Principal Architect Access</h3>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   No layers of account managers. You will speak directly with principal engineering directors who evaluate technical scope and architectural viability.
                 </p>
@@ -456,7 +456,7 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
                 <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#004771] flex items-center justify-center mb-5 shadow-2xs">
                   <Lock className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0B1E3D] mb-2">Zero Vendor Lock-In</h3>
+                <h3 className="text-lg font-bold text-[#121212] mb-2">Zero Vendor Lock-In</h3>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   We build upon open industry standards, containerized microservices, and clean modular codebases that your internal teams can maintain and expand seamlessly.
                 </p>
@@ -466,7 +466,7 @@ export default function ServicesCatalogClient({ siteSettings }: ServicesCatalogC
                 <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#004771] flex items-center justify-center mb-5 shadow-2xs">
                   <Zap className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0B1E3D] mb-2">High-Velocity Agile Squads</h3>
+                <h3 className="text-lg font-bold text-[#121212] mb-2">High-Velocity Agile Squads</h3>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   Distributed engineering squads operating across India and the UAE to ensure round-the-clock progress, continuous integration, and rapid sprint velocity.
                 </p>

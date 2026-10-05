@@ -48,7 +48,7 @@ export default function JobList({ jobs, header }: JobListProps) {
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {header?.eyebrow || 'JOIN OUR TEAM'}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight">
             {header?.heading || 'Explore Open Positions'}
           </h2>
           <p className="text-sm sm:text-base text-gray-600 mt-3 leading-relaxed">
@@ -100,7 +100,7 @@ export default function JobList({ jobs, header }: JobListProps) {
             <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center mx-auto text-gray-400 mb-4">
               <Briefcase className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#0B1E3D] mb-1">No positions found</h3>
+            <h3 className="text-base font-bold text-[#121212] mb-1">No positions found</h3>
             <p className="text-xs sm:text-sm text-gray-500 mb-6">
               We couldn't find any roles matching &quot;{searchQuery || selectedCategory}&quot;. Try resetting filters or reach out directly.
             </p>

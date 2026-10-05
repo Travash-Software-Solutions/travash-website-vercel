@@ -39,7 +39,7 @@ export default function JobDetailContent({ job }: { job: JobDetailData }) {
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1E3D] tracking-tight mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121212] tracking-tight mb-4">
           {job.title}
         </h1>
 
@@ -71,7 +71,7 @@ export default function JobDetailContent({ job }: { job: JobDetailData }) {
       <div className="space-y-8 text-gray-700 text-base leading-relaxed">
         {job.overview && (
           <div>
-            <h2 className="text-xl font-bold text-[#0B1E3D] mb-3">Role Overview</h2>
+            <h2 className="text-xl font-bold text-[#121212] mb-3">Role Overview</h2>
             <p className="leading-relaxed whitespace-pre-line">{job.overview}</p>
           </div>
         )}
@@ -79,7 +79,7 @@ export default function JobDetailContent({ job }: { job: JobDetailData }) {
         {/* Responsibilities */}
         {job.responsibilities && job.responsibilities.length > 0 && (
           <div>
-            <h2 className="text-xl font-bold text-[#0B1E3D] mb-3">Key Responsibilities</h2>
+            <h2 className="text-xl font-bold text-[#121212] mb-3">Key Responsibilities</h2>
             <ul className="space-y-2.5">
               {job.responsibilities.map((resp, idx) => (
                 <li key={idx} className="flex items-start gap-3">
@@ -94,7 +94,7 @@ export default function JobDetailContent({ job }: { job: JobDetailData }) {
         {/* Requirements */}
         {job.requirements && job.requirements.length > 0 && (
           <div>
-            <h2 className="text-xl font-bold text-[#0B1E3D] mb-3">Qualifications & Requirements</h2>
+            <h2 className="text-xl font-bold text-[#121212] mb-3">Qualifications & Requirements</h2>
             <ul className="space-y-2.5">
               {job.requirements.map((req, idx) => (
                 <li key={idx} className="flex items-start gap-3">
@@ -109,7 +109,7 @@ export default function JobDetailContent({ job }: { job: JobDetailData }) {
         {/* Preferred Skills */}
         {job.preferredSkills && job.preferredSkills.length > 0 && (
           <div>
-            <h2 className="text-xl font-bold text-[#0B1E3D] mb-3">Preferred Skills & Experience</h2>
+            <h2 className="text-xl font-bold text-[#121212] mb-3">Preferred Skills & Experience</h2>
             <ul className="space-y-2.5">
               {job.preferredSkills.map((skill, idx) => (
                 <li key={idx} className="flex items-start gap-3">
@@ -124,7 +124,7 @@ export default function JobDetailContent({ job }: { job: JobDetailData }) {
         {/* Benefits */}
         {job.benefits && job.benefits.length > 0 && (
           <div className="p-6 rounded-2xl bg-[#EEF4FB] border border-blue-100">
-            <h2 className="text-lg font-bold text-[#0B1E3D] mb-3">What We Offer</h2>
+            <h2 className="text-lg font-bold text-[#121212] mb-3">What We Offer</h2>
             <div className="grid sm:grid-cols-2 gap-3">
               {job.benefits.map((b, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 font-medium">

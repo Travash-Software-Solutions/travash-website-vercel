@@ -76,7 +76,7 @@ export default function CultureSection({ teams, culture, pillars }: CultureSecti
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {teamsEyebrow}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight mb-3">
             {teamsHeading} & {cultureHeading}
           </h2>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -118,7 +118,7 @@ export default function CultureSection({ teams, culture, pillars }: CultureSecti
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#E0F2FE] text-[#004771] flex items-center justify-center mb-3">
                     <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <h4 className="text-sm sm:text-base font-bold text-[#0B1E3D] mb-1">{pillar.title}</h4>
+                  <h4 className="text-sm sm:text-base font-bold text-[#121212] mb-1">{pillar.title}</h4>
                   <p className="text-xs text-gray-600 leading-relaxed">{pillar.desc}</p>
                 </div>
               )

@@ -26,7 +26,7 @@ export default function ServiceProblem({ problem }: { problem: ServiceProblemSec
             <span className="text-xs font-bold uppercase tracking-widest text-[#066095] block mb-2">
               {problem.label || 'The Problem:'}
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#3D3C3C] tracking-tight leading-[1.2] mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#121212] tracking-tight leading-[1.2] mb-6">
               {problem.headline || problem.title || 'You are making critical decisions based on outdated spreadsheets.'}
             </h2>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-normal mb-8">
@@ -45,7 +45,7 @@ export default function ServiceProblem({ problem }: { problem: ServiceProblemSec
                       <AlertTriangle className="w-3.5 h-3.5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-gray-900 mb-1 leading-snug">
+                      <h4 className="text-sm font-bold text-[#121212] mb-1 leading-snug">
                         {point.title}
                       </h4>
                       <p className="text-xs text-gray-600 leading-relaxed font-normal">

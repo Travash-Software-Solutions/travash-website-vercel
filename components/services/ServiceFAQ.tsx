@@ -36,7 +36,7 @@ export default function ServiceFAQ({ faqs, serviceTitle }: ServiceFAQProps) {
           <span className="text-xs font-bold uppercase tracking-widest text-[#066095] block mb-2">
             Inquiries
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#3D3C3C] tracking-tight leading-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#121212] tracking-tight leading-tight mb-3">
             Frequently Asked Questions
           </h2>
           <p className="text-sm sm:text-base text-gray-600 font-normal">

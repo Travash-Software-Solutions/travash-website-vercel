@@ -49,7 +49,7 @@ export default function JobApplicationForm({ jobTitle, jobSlug }: JobApplication
   return (
     <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-md font-['Plus_Jakarta_Sans',sans-serif]">
       <div className="mb-6">
-        <h3 className="text-xl font-extrabold text-[#0B1E3D] mb-1">Apply for this Position</h3>
+        <h3 className="text-xl font-extrabold text-[#121212] mb-1">Apply for this Position</h3>
         <p className="text-xs sm:text-sm text-gray-500">
           Role: <span className="font-semibold text-[#004771]">{jobTitle}</span>
         </p>

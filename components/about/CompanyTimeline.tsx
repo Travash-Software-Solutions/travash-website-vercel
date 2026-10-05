@@ -150,7 +150,7 @@ export default function CompanyTimeline({ header, timeline }: CompanyTimelinePro
             <Milestone className="w-3.5 h-3.5 text-[#14B8A6]" />
             <span>{eyebrow}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight leading-tight">
             {heading}
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 mt-2 sm:mt-3 leading-relaxed">
@@ -271,7 +271,7 @@ export default function CompanyTimeline({ header, timeline }: CompanyTimelinePro
 
               {/* Title & Description */}
               <div className="max-w-3xl">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#0B1E3D] tracking-tight mb-2.5 sm:mb-4">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#121212] tracking-tight mb-2.5 sm:mb-4">
                   {activeItem.title}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-5 sm:mb-6">
@@ -338,7 +338,7 @@ export default function CompanyTimeline({ header, timeline }: CompanyTimelinePro
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-extrabold text-[#0B1E3D] mt-1.5 mb-2">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-[#121212] mt-1.5 mb-2">
                     {item.title}
                   </h3>
 

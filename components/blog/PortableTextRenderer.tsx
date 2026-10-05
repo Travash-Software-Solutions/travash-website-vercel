@@ -146,7 +146,7 @@ export const portableTextComponents: PortableTextComponents = {
       return (
         <h2
           id={id}
-          className="text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-5 scroll-mt-28 tracking-tight"
+          className="text-2xl md:text-3xl font-bold text-[#121212] mt-12 mb-5 scroll-mt-28 tracking-tight"
         >
           {children}
         </h2>
@@ -160,19 +160,19 @@ export const portableTextComponents: PortableTextComponents = {
       return (
         <h3
           id={id}
-          className="text-xl md:text-2xl font-semibold text-slate-900 mt-8 mb-4 scroll-mt-28"
+          className="text-xl md:text-2xl font-semibold text-[#121212] mt-8 mb-4 scroll-mt-28"
         >
           {children}
         </h3>
       )
     },
     h4: ({ children }) => (
-      <h4 className="text-lg md:text-xl font-semibold text-slate-900 mt-6 mb-3">
+      <h4 className="text-lg md:text-xl font-semibold text-[#121212] mt-6 mb-3">
         {children}
       </h4>
     ),
     h5: ({ children }) => (
-      <h5 className="text-base md:text-lg font-semibold text-slate-900 mt-5 mb-2">
+      <h5 className="text-base md:text-lg font-semibold text-[#121212] mt-5 mb-2">
         {children}
       </h5>
     ),

@@ -67,7 +67,7 @@ export default function BlogCard({ post }: { post: BlogPostItem }) {
             <time dateTime={post.publishedAt}>{dateFormatted}</time>
           </div>
 
-          <h3 className="text-lg font-bold text-[#0B1E3D] group-hover:text-[#004771] transition-colors leading-snug mb-3">
+          <h3 className="text-lg font-bold text-[#121212] group-hover:text-[#004771] transition-colors leading-snug mb-3">
             <Link href={`/blogs/${post.slug}`} className="line-clamp-2">
               {post.title}
             </Link>

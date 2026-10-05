@@ -161,7 +161,7 @@ export default function ServiceTestimonial({ testimonial, testimonials }: Props)
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#3D3C3C] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#121212] tracking-tight leading-tight">
             What Technical Leaders Say
           </h2>
         </motion.div>

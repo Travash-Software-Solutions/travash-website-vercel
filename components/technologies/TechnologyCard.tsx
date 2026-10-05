@@ -322,7 +322,7 @@ export default function TechnologyCard({ tech }: { tech: TechnologyItem }) {
           )}
         </div>
 
-        <h3 className="text-base font-bold text-[#0B1E3D] group-hover:text-[#004771] transition-colors mb-1.5">
+        <h3 className="text-base font-bold text-[#121212] group-hover:text-[#004771] transition-colors mb-1.5">
           {tech.name}
         </h3>
 

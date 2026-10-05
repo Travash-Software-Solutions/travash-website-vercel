@@ -76,7 +76,7 @@ export default function ValuesGrid({ header, values, heading, eyebrow, subheadin
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {finalEyebrow}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight">
             {finalHeading}
           </h2>
           <p className="text-sm sm:text-base text-gray-600 mt-2 sm:mt-3 leading-relaxed">
@@ -96,7 +96,7 @@ export default function ValuesGrid({ header, values, heading, eyebrow, subheadin
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#E0F2FE] text-[#004771] group-hover:bg-[#004771] group-hover:text-white transition-colors flex items-center justify-center mb-4 sm:mb-5">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#0B1E3D] mb-2 group-hover:text-[#004771] transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-[#121212] mb-2 group-hover:text-[#004771] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">

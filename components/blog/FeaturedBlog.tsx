@@ -70,7 +70,7 @@ export default function FeaturedBlog({ post }: { post: BlogPostItem }) {
               <time dateTime={post.publishedAt}>{dateFormatted}</time>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1E3D] group-hover:text-[#004771] transition-colors leading-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#121212] group-hover:text-[#004771] transition-colors leading-tight mb-4">
               <Link href={`/blogs/${postSlug}`}>
                 {post.title}
               </Link>

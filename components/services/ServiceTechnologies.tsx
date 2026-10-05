@@ -221,7 +221,7 @@ export default function ServiceTechnologies({ technologyStack }: ServiceTechnolo
           <span className="text-xs font-bold uppercase tracking-widest text-[#066095] block mb-2">
             Technology Ecosystem
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#3D3C3C] tracking-tight leading-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#121212] tracking-tight leading-tight mb-3">
             The Technologies We Command
           </h2>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
@@ -255,7 +255,7 @@ export default function ServiceTechnologies({ technologyStack }: ServiceTechnolo
                 className="bg-[#F8FAFC] border border-gray-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#02487D]/40 hover:shadow-md transition-all duration-300 group"
               >
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#02487D] transition-colors mb-4 pb-3 border-b border-gray-200/80">
+                  <h3 className="text-lg font-bold text-[#121212] group-hover:text-[#02487D] transition-colors mb-4 pb-3 border-b border-gray-200/80">
                     {group.category}
                   </h3>
 

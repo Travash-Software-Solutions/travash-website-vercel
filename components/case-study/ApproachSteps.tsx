@@ -29,7 +29,7 @@ export default function ApproachSteps({ steps }: { steps: ApproachStep[] }) {
 
             {/* Step Content */}
             <div className="flex-1 pt-0.5 sm:pt-1">
-              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#0B4785] transition-colors duration-200 mb-1.5 leading-snug">
+              <h3 className="text-base sm:text-lg font-bold text-[#121212] group-hover:text-[#0B4785] transition-colors duration-200 mb-1.5 leading-snug">
                 {step.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed font-normal">

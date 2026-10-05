@@ -76,7 +76,7 @@ export default function ServiceCapabilities({
           <span className="text-xs font-bold uppercase tracking-widest text-[#066095] block mb-2">
             {eyebrowText}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#3D3C3C] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#121212] tracking-tight leading-tight">
             {headingText}
           </h2>
         </motion.div>

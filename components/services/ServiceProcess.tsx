@@ -24,7 +24,7 @@ export default function ServiceProcess({ process }: { process: ProcessType }) {
           <span className="text-xs font-bold uppercase tracking-widest text-[#066095] block mb-2">
             Engineering Methodology
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#3D3C3C] tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#121212] tracking-tight leading-tight mb-4">
             {process.heading || 'Our Infrastructure Engineering Process'}
           </h2>
           {process.description && (
@@ -75,7 +75,7 @@ export default function ServiceProcess({ process }: { process: ProcessType }) {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#02487D] transition-colors mb-2 leading-snug">
+                  <h3 className="text-lg font-bold text-[#121212] group-hover:text-[#02487D] transition-colors mb-2 leading-snug">
                     {step.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">

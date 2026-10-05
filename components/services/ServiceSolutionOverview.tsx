@@ -56,7 +56,7 @@ export default function ServiceSolutionOverview({ solution }: { solution: Soluti
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-7 flex flex-col items-start"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-black tracking-tight leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#121212] tracking-tight leading-tight mb-4">
               {solution.heading || 'How Travash Solves It'}
             </h2>
             <p className="text-black/85 text-base sm:text-lg leading-relaxed font-normal mb-8 max-w-2xl">
@@ -82,7 +82,7 @@ export default function ServiceSolutionOverview({ solution }: { solution: Soluti
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="text-base sm:text-lg font-bold text-black mb-1 leading-snug">
+                        <h3 className="text-base sm:text-lg font-bold text-[#121212] mb-1 leading-snug">
                           {benefit.title}
                         </h3>
                         <p className="text-xs sm:text-sm text-black/80 leading-relaxed font-normal">
@@ -99,7 +99,7 @@ export default function ServiceSolutionOverview({ solution }: { solution: Soluti
             {solution.cta && (
               <Link
                 href={solution.cta.href || '#contact'}
-                className="btn-global h-[66px] rounded-[5px] !w-auto min-w-[220px] max-w-full inline-flex items-center justify-center bg-white text-[#02487D] hover:bg-gray-100 font-bold px-8 text-sm sm:text-base transition-all duration-200 shadow-md active:scale-95 whitespace-nowrap"
+                className="btn-global h-[66px] rounded-[5px] !w-auto min-w-[260px] max-w-full inline-flex items-center justify-center bg-white text-[#02487D] hover:bg-gray-100 font-bold px-8 text-sm sm:text-base transition-all duration-200 shadow-md active:scale-95 whitespace-nowrap"
               >
                 <span className="whitespace-nowrap">{solution.cta.label}</span>
                 <ArrowRight className="w-4 h-4 ml-2 flex-shrink-0" />

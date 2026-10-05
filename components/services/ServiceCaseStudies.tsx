@@ -192,7 +192,7 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
               <Sparkles className="w-3.5 h-3.5 text-[#066095]" />
               <span>Proven Execution</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-gray-900 tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#121212] tracking-tight leading-[1.2]">
               {serviceTitle ? `${serviceTitle} Case Studies` : 'Featured Case Studies & ROI'}
             </h2>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal mt-2">
@@ -288,7 +288,7 @@ export default function ServiceCaseStudies({ caseStudies, serviceTitle }: Servic
 
                       {/* Content Body */}
                       <div className="p-5 sm:p-6">
-                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#02487D] transition-colors leading-snug mb-2.5 line-clamp-2">
+                        <h3 className="text-lg font-bold text-[#121212] group-hover:text-[#02487D] transition-colors leading-snug mb-2.5 line-clamp-2">
                           {study.title}
                         </h3>
 

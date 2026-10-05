@@ -99,7 +99,7 @@ export default function EngagementModels({
                     )}
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#02487D] transition-colors mb-3 leading-snug">
+                  <h3 className="text-xl font-bold text-[#121212] group-hover:text-[#02487D] transition-colors mb-3 leading-snug">
                     {model.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal mb-6">

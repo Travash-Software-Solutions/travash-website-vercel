@@ -39,7 +39,7 @@ export default function CompanyStory({ data }: CompanyStoryProps) {
             <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2 sm:mb-3">
               {eyebrow}
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight leading-tight mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight leading-tight mb-4 sm:mb-6">
               {heading}
             </h2>
 

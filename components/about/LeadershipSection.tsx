@@ -51,7 +51,7 @@ export default function LeadershipSection({ header, leadership }: LeadershipSect
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {eyebrow}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E3D] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#121212] tracking-tight">
             {heading}
           </h2>
           <p className="text-sm sm:text-base text-gray-600 mt-2 sm:mt-3 leading-relaxed">
@@ -82,7 +82,7 @@ export default function LeadershipSection({ header, leadership }: LeadershipSect
                       sizes="(max-width: 640px) 150px, 200px"
                     />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-extrabold text-[#0B1E3D]">{leader.name}</h3>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-[#121212]">{leader.name}</h3>
                   <p className="text-xs sm:text-sm font-semibold text-[#004771] mt-0.5">{leader.role}</p>
                   {leader.linkedinUrl && (
                     <a

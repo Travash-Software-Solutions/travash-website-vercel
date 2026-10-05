@@ -53,7 +53,7 @@ div {
 
 /* Force global heading colors */
 h1, h2, h3, h4, h5, h6 {
-  color: #121212 !important;
+  /* color: #121212 !important; */
 }
 
 html {
@@ -151,8 +151,8 @@ p {
   font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
 }
 
 /* Capabilities Card Action Button */

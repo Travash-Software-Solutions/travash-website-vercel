@@ -83,7 +83,7 @@ export default function OfficeLocations({ offices }: OfficeLocationsProps) {
                       )}
                     </button>
                   </div>
-                  <h4 className="text-sm font-bold text-[#0B1E3D] mb-1">
+                  <h4 className="text-sm font-bold text-[#121212] mb-1">
                     {office.label}
                   </h4>
                   <p className="text-xs text-gray-600 leading-relaxed flex items-start gap-1.5">

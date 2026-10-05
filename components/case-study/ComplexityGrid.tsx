@@ -34,7 +34,7 @@ export default function ComplexityGrid({ items }: { items: ComplexityItem[] }) {
               <div className="w-12 h-12 rounded-xl bg-[#EEF4FB] border border-[#D5E4F5] text-[#0B4785] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#0B4785] group-hover:text-white transition-all duration-300">
                 <Icon className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0B4785] transition-colors duration-200 mb-2 leading-snug">
+              <h3 className="text-lg font-bold text-[#121212] group-hover:text-[#0B4785] transition-colors duration-200 mb-2 leading-snug">
                 {item.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed font-normal">

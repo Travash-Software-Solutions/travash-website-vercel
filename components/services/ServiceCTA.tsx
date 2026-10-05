@@ -121,7 +121,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-black tracking-[-1.5px] leading-[1.18] mb-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-[#121212] tracking-[-1.5px] leading-[1.18] mb-5">
               {cta.heading || 'Ready to build infrastructure that accelerates your business?'}
             </h2>
             <p className="text-black text-sm sm:text-base leading-relaxed font-normal mb-8 max-w-xl">
@@ -142,7 +142,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-base font-bold text-black mb-0.5 leading-snug">
+                      <h4 className="text-base font-bold text-[#121212] mb-0.5 leading-snug">
                         {feat.title}
                       </h4>
                       <p className="text-xs sm:text-sm text-black leading-relaxed font-normal">
@@ -179,7 +179,7 @@ export default function ServiceCTA({ cta }: { cta: ServiceFinalCTA }) {
                   <span className="text-xs font-bold uppercase tracking-widest text-[#066095] block mb-0.5">
                     Client Success
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#121212] leading-tight">
                     {isSubmitted ? `${firstName} – Client Success` : 'Sneha Sharma – Client Success'}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 mt-0.5">

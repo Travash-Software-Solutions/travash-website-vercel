@@ -14,7 +14,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             CONTINUE EXPLORING
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1E3D] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#121212] tracking-tight">
             Related Insights & Engineering Perspectives
           </h2>
         </div>

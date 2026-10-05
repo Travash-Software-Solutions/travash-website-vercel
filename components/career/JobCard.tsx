@@ -27,7 +27,7 @@ export default function JobCard({ job }: { job: JobItem }) {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-[#0B1E3D] group-hover:text-[#004771] transition-colors mb-3">
+        <h3 className="text-xl font-bold text-[#121212] group-hover:text-[#004771] transition-colors mb-3">
           <Link href={`/career/${job.slug}`}>
             {job.title}
           </Link>

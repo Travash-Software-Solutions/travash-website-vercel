@@ -151,7 +151,7 @@ export default function BlogDetailContent({ post }: BlogDetailProps) {
       )}
 
       {/* Article Title */}
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1E3D] tracking-tight leading-[1.2] mb-6">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121212] tracking-tight leading-[1.2] mb-6">
         {post.title}
       </h1>
 
@@ -300,7 +300,7 @@ export default function BlogDetailContent({ post }: BlogDetailProps) {
             {post.author.name ? post.author.name.charAt(0).toUpperCase() : 'T'}
           </div>
           <div>
-            <h4 className="text-base font-bold text-[#0B1E3D]">
+            <h4 className="text-base font-bold text-[#121212]">
               Written by {post.author.name || 'Travash Editorial Team'}
             </h4>
             <p className="text-xs text-gray-500 mb-2">
