@@ -127,7 +127,7 @@ export default async function IndustryDetailPage({
             <div className="absolute top-10 right-1/4 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-[94rem] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Breadcrumbs */}
             <div className="flex items-center gap-2 text-xs font-semibold text-gray-500 mb-6">
               <Link href="/" className="hover:text-[#004771]">Home</Link>
@@ -145,7 +145,7 @@ export default async function IndustryDetailPage({
                   <span>{industry.eyebrow}</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1E3D] tracking-tight leading-[1.15]">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-Semibold text-[#0B1E3D] tracking-tight leading-[1.15]">
                   {industry.title}
                 </h1>
 

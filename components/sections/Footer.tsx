@@ -21,6 +21,7 @@ interface SiteSettings {
   contactPhone?: string
   socialLinks?: { platform: string; url: string }[]
   menuLinks?: { label: string; href: string }[]
+  industryLinks?: { label: string; href: string }[]
   serviceLinks?: { label: string; href: string }[]
   offices?: { label: string; address: string }[]
 }
@@ -75,6 +76,17 @@ const DEFAULT_SERVICE_LINKS = [
   { label: 'Staff Augmentation', href: '/services/staff-augmentation' },
 ]
 
+const DEFAULT_INDUSTRY_LINKS = [
+  { label: 'Banking & Financial', href: '/industries/fintech' },
+  { label: 'Government & Public', href: '/industries/government' },
+  { label: 'E-commerce & Retail', href: '/industries/ecommerce' },
+  { label: 'Health & Wellness', href: '/industries/health' },
+  { label: 'Travel & Hospitality', href: '/industries/travel' },
+  { label: 'Recruitment & HR Tech', href: '/industries/recruitment' },
+  { label: 'Real Estate & PropTech', href: '/industries/real-estate' },
+  { label: 'Manufacturing & Supply', href: '/industries/manufacturing' },
+]
+
 const DEFAULT_OFFICES = [
   {
     label: 'India',
@@ -102,6 +114,7 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
     '/travash-latest-logo.svg'
 
   const menuLinks = settings?.menuLinks && settings.menuLinks.length > 0 ? settings.menuLinks : DEFAULT_MENU_LINKS
+  const industryLinks = settings?.industryLinks && settings.industryLinks.length > 0 ? settings.industryLinks : DEFAULT_INDUSTRY_LINKS
   const serviceLinks = settings?.serviceLinks && settings.serviceLinks.length > 0 ? settings.serviceLinks : DEFAULT_SERVICE_LINKS
   const offices = settings?.offices && settings.offices.length > 0 ? settings.offices : DEFAULT_OFFICES
   const socialLinks = settings?.socialLinks && settings.socialLinks.length > 0 ? settings.socialLinks : DEFAULT_SOCIALS
@@ -174,8 +187,22 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
             </ul>
           </div>
 
-          {/* Column 3: Our Services */}
-          <div className="lg:col-span-3 flex flex-col gap-4">
+          {/* Column 3: Industries */}
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            <h4 className="text-sm font-bold text-[#0B4785] tracking-tight">Industries</h4>
+            <ul className="flex flex-col gap-2.5 text-sm">
+              {industryLinks.map((link, i) => (
+                <li key={i}>
+                  <Link href={link.href} className="text-gray-600 hover:text-[#0B4785] transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Our Services */}
+          <div className="lg:col-span-2 xl:col-span-3 flex flex-col gap-4">
             <h4 className="text-sm font-bold text-[#0B4785] tracking-tight">Our Services</h4>
             <ul className="flex flex-col gap-2.5 text-sm">
               {serviceLinks.map((link, i) => (
@@ -188,8 +215,8 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Locations */}
-          <div className="lg:col-span-4 flex flex-col gap-4">
+          {/* Column 5: Contact & Locations */}
+          <div className="lg:col-span-3 xl:col-span-2 flex flex-col gap-4">
             <h4 className="text-sm font-bold text-[#0B4785] tracking-tight">Contact</h4>
             <div className="flex flex-col gap-4 text-sm text-gray-600">
               {offices.map((office, idx) => (
