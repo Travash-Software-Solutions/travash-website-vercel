@@ -565,6 +565,7 @@ export async function generateMetadata({
       description,
       url: canonicalUrl,
       type: 'article',
+      siteName: 'Travash Software Solutions',
       ...(ogImageUrl ? { images: [{ url: ogImageUrl }] } : {}),
     },
     twitter: {
@@ -572,6 +573,10 @@ export async function generateMetadata({
       title,
       description,
       ...(ogImageUrl ? { images: [ogImageUrl] } : {}),
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }
@@ -604,8 +609,42 @@ export default async function PortfolioProjectDetailPage({
     notFound()
   }
 
+  const articleUrl = `https://travash.com/portfolio/${slug}`
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: caseStudy.title,
+    description: caseStudy.shortDescription,
+    image: [
+      (caseStudy.heroImage || caseStudy.featureImage) 
+        ? getSanityImageUrl(caseStudy.heroImage || caseStudy.featureImage, 1200)
+        : 'https://travash.com/home-img/Group%201000003287.png'
+    ],
+    author: {
+      '@type': 'Organization',
+      name: 'Travash Software Solutions'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Travash Software Solutions',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://travash.com/travash-latest-logo.svg'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': articleUrl
+    }
+  }
+
   return (
     <>
+      {/* Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar settings={siteSettings} />
       <main className="min-h-screen bg-white font-['Plus_Jakarta_Sans',sans-serif]">
         {/* 1. Hero Section with Metadata Stack & Mockup */}

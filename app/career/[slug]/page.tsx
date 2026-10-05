@@ -236,9 +236,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Position Not Found | Travash Careers' }
   }
 
+  const canonicalUrl = `https://travash.com/career/${slug}`
+  const metaTitle = `${jobData.title} — Careers at Travash`
+  const metaDesc = jobData.shortDescription || `Apply for the ${jobData.title} opening at Travash Software Solutions.`
+
   return {
-    title: `${jobData.title} — Careers at Travash`,
-    description: jobData.shortDescription || `Apply for the ${jobData.title} opening at Travash Software Solutions.`,
+    title: metaTitle,
+    description: metaDesc,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: metaTitle,
+      description: metaDesc,
+      url: canonicalUrl,
+      type: 'website',
+      siteName: 'Travash Software Solutions',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metaTitle,
+      description: metaDesc,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   }
 }
 
@@ -267,8 +290,41 @@ export default async function JobDetailPage({ params }: PageProps) {
     notFound()
   }
 
+  const canonicalUrl = `https://travash.com/career/${job.slug}`
+  
+  // JSON-LD Structured Data for JobPosting
+  const jsonLd = {
+    '@context': 'https://schema.org/',
+    '@type': 'JobPosting',
+    title: job.title,
+    description: job.overview || job.shortDescription,
+    datePosted: new Date().toISOString().split('T')[0],
+    validThrough: new Date(new Date().setMonth(new Date().getMonth() + 6)).toISOString().split('T')[0],
+    employmentType: job.employmentType?.toUpperCase().replace('-', '_').replace(' ', '_') || 'FULL_TIME',
+    hiringOrganization: {
+      '@type': 'Organization',
+      name: 'Travash Software Solutions',
+      sameAs: 'https://travash.com',
+      logo: 'https://travash.com/travash-latest-logo.svg'
+    },
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: job.location?.split(',')[0]?.trim() || 'Hyderabad',
+        addressRegion: job.location?.split(',')[1]?.split('(')[0]?.trim() || 'Telangana',
+        addressCountry: 'IN'
+      }
+    }
+  }
+
   return (
     <>
+      {/* Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar settings={siteSettings} />
       <main className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">

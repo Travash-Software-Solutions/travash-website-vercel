@@ -84,13 +84,19 @@ export async function generateMetadata({
       data.shortDescription ||
       'Enterprise software engineering, data architecture, and scalable technology solutions by Travash.'
     const ogImageUrl = data.seo?.ogImage?.asset?.url || (typeof data.hero?.heroImage === 'object' ? data.hero.heroImage?.asset?.url : undefined)
+    const canonicalUrl = `https://travash.com/services/${slug}`
 
     return {
       title,
       description,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       openGraph: {
         title,
         description,
+        url: canonicalUrl,
+        siteName: 'Travash Software Solutions',
         type: 'website',
         ...(ogImageUrl ? { images: [{ url: ogImageUrl }] } : {}),
       },
@@ -99,6 +105,10 @@ export async function generateMetadata({
         title,
         description,
         ...(ogImageUrl ? { images: [ogImageUrl] } : {}),
+      },
+      robots: {
+        index: true,
+        follow: true,
       },
     }
   } catch {
@@ -161,8 +171,28 @@ export default async function ServiceDetailPage({
     notFound()
   }
 
+  const serviceUrl = `https://travash.com/services/${slug}`
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.shortDescription || service.hero?.subtitle,
+    provider: {
+      '@type': 'Organization',
+      name: 'Travash Software Solutions',
+      url: 'https://travash.com',
+      logo: 'https://travash.com/travash-latest-logo.svg'
+    },
+    areaServed: 'Worldwide',
+    url: serviceUrl
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar settings={siteSettings} />
       <main className="min-h-screen bg-gradient-to-b from-[#F4F8FC] via-white to-white font-['Plus_Jakarta_Sans',sans-serif] overflow-x-clip">
         {/* 1. Service Hero */}

@@ -38,13 +38,31 @@ export async function generateMetadata({
     }
   }
 
+  const canonicalUrl = `https://travash.com/industries/${slug}`
+
   return {
     title: `${industry.title} Software Engineering & AI Solutions | Travash`,
     description: industry.overview.slice(0, 160),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: `${industry.title} | Travash Software Solutions`,
       description: industry.overview.slice(0, 160),
+      url: canonicalUrl,
+      siteName: 'Travash Software Solutions',
+      type: 'website',
       images: industry.heroImage ? [{ url: industry.heroImage }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${industry.title} | Travash Software Solutions`,
+      description: industry.overview.slice(0, 160),
+      images: industry.heroImage ? [industry.heroImage] : [],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }
@@ -76,8 +94,29 @@ export default async function IndustryDetailPage({
 
   const { siteSettings } = await getIndustryPageData()
 
+  const industryUrl = `https://travash.com/industries/${slug}`
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `${industry.title} Industry Solutions`,
+    description: industry.overview,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Travash Software Solutions',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://travash.com/travash-latest-logo.svg'
+      }
+    },
+    url: industryUrl
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar settings={siteSettings} />
       <main className="min-h-screen bg-white font-['Plus_Jakarta_Sans',sans-serif] overflow-x-hidden">
         {/* 1. Industry Hero Section */}

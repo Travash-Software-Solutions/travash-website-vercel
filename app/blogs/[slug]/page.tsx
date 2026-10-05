@@ -160,7 +160,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
       name: 'Travash Software Solutions',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://travash.com/wp-content/uploads/2023/12/New-latest-logo.svg',
+        url: 'https://travash.com/travash-latest-logo.svg',
       },
     },
     mainEntityOfPage: {
