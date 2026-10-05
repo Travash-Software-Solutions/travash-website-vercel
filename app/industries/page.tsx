@@ -122,7 +122,7 @@ export default async function IndustriesDirectoryPage() {
                       <span className="text-[10px] font-extrabold uppercase tracking-widest text-teal-300 block mb-0.5">
                         {industry.eyebrow}
                       </span>
-                      <h3 className="text-lg font-bold text-white group-hover:text-teal-200 transition-colors">
+                      <h3 className="text-lg font-bold !text-white group-hover:text-teal-200 transition-colors">
                         {industry.title}
                       </h3>
                     </div>

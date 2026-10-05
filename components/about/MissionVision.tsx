@@ -30,8 +30,8 @@ export default function MissionVision({ data }: MissionVisionProps) {
 
   return (
     <section className="py-10 sm:py-12 lg:py-14 bg-white font-['Plus_Jakarta_Sans',sans-serif] border-b border-gray-100">
-      <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <div className="max-w-[84rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center  mb-8 sm:mb-10">
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {eyebrow}
           </span>
@@ -48,7 +48,7 @@ export default function MissionVision({ data }: MissionVisionProps) {
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-[#14B8A6] mb-4 sm:mb-5">
                 <Compass className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2.5 sm:mb-3 tracking-tight">{missionTitle}</h3>
+              <h3 className="text-lg !text-white sm:text-xl font-bold mb-2.5 sm:mb-3 tracking-tight">{missionTitle}</h3>
               <p className="text-xs sm:text-sm lg:text-base text-gray-200 leading-relaxed">{missionDescription}</p>
             </div>
             <div className="mt-6 pt-4 sm:mt-8 sm:pt-5 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-[#14B8A6]">

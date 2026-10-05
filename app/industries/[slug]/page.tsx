@@ -186,7 +186,7 @@ export default async function IndustryDetailPage({
                     <span className="text-xs font-bold uppercase tracking-wider text-teal-300 block mb-1">
                       Targeted Engineering Practice
                     </span>
-                    <h3 className="text-lg font-bold">
+                    <h3 className="text-lg !text-white font-bold">
                       Proven Enterprise Execution
                     </h3>
                   </div>

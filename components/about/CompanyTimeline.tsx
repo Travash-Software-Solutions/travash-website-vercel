@@ -145,7 +145,7 @@ export default function CompanyTimeline({ header, timeline }: CompanyTimelinePro
 
       <div className="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
             <Milestone className="w-3.5 h-3.5 text-[#14B8A6]" />
             <span>{eyebrow}</span>
@@ -159,7 +159,7 @@ export default function CompanyTimeline({ header, timeline }: CompanyTimelinePro
         </div>
 
         {/* Desktop Interactive Rail & Showcase */}
-        <div className="hidden lg:block max-w-5xl mx-auto">
+        <div className="hidden lg:block  mx-auto">
           {/* Progress / Step Selector Rail */}
           <div className="relative mb-14">
             {/* Background connecting track */}

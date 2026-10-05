@@ -94,7 +94,7 @@ export default function CultureSection({ teams, culture, pillars }: CultureSecti
                 <Sparkles className="w-3.5 h-3.5 text-[#14B8A6]" />
                 <span>HOW WE WORK</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold mb-3 leading-snug">
+              <h3 className="text-xl sm:text-2xl font-extrabold mb-3 leading-snug !text-white">
                 {cultureCardHeading}
               </h3>
               <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">

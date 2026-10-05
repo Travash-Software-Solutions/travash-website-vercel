@@ -47,7 +47,7 @@ export default function LeadershipSection({ header, leadership }: LeadershipSect
   return (
     <section className="py-10 sm:py-12 lg:py-16 bg-white font-['Plus_Jakarta_Sans',sans-serif] border-b border-gray-100">
       <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+        <div className="text-center  mx-auto mb-8 sm:mb-10">
           <span className="text-xs font-bold text-[#14B8A6] uppercase tracking-widest block mb-2">
             {eyebrow}
           </span>
@@ -59,7 +59,7 @@ export default function LeadershipSection({ header, leadership }: LeadershipSect
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto">
           {leaders.map((leader, idx) => {
             const photoUrl = leader.image?.asset?.url || '/gavrav-gupta.webp'
             const hl = Array.isArray(leader.highlights) && leader.highlights.length > 0
@@ -72,8 +72,8 @@ export default function LeadershipSection({ header, leadership }: LeadershipSect
                 className="bg-[#EEF4FB] rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-blue-100 shadow-xs grid md:grid-cols-12 gap-6 sm:gap-8 items-center"
               >
                 {/* Profile Photo / Avatar */}
-                <div className="md:col-span-5 flex flex-col items-center text-center">
-                  <div className="relative w-36 h-36 sm:w-48 sm:h-48 rounded-2xl overflow-hidden shadow-md border-4 border-white bg-white mb-3 sm:mb-4">
+                <div className="md:col-span-6 flex flex-col items-center text-center">
+                  <div className="relative w-106 h-106 rounded-2xl overflow-hidden shadow-md border-4 border-white bg-white mb-3 sm:mb-4">
                     <Image
                       src={photoUrl}
                       alt={leader.name}
@@ -98,7 +98,7 @@ export default function LeadershipSection({ header, leadership }: LeadershipSect
                 </div>
 
                 {/* Bio & Track Record */}
-                <div className="md:col-span-7 flex flex-col justify-center">
+                <div className="md:col-span-6 flex flex-col justify-center">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#004771] text-xs font-bold w-fit mb-3 sm:mb-4 border border-blue-200/60">
                     <Award className="w-3.5 h-3.5 text-[#14B8A6]" />
                     <span>{leader.experienceYears || '24+ Years IT Leadership'}</span>
