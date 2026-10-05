@@ -6,7 +6,6 @@ import Navbar from '@/components/sections/Navbar'
 import CareerHero from '@/components/career/CareerHero'
 import CareerBenefits from '@/components/career/CareerBenefits'
 import JobList from '@/components/career/JobList'
-import Testimonials from '@/components/sections/Testimonials'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
 
@@ -128,7 +127,6 @@ export default async function CareerPage() {
         <CareerHero data={careerPage?.hero} openPositionsCount={jobs.length} />
         <CareerBenefits data={careerPage?.benefitsSection} />
         <JobList jobs={jobs} header={careerPage?.jobsSection} />
-        <Testimonials />
         <Contact />
       </main>
       <Footer settings={siteSettings} />
