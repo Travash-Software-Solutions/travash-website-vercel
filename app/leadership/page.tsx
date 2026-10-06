@@ -45,7 +45,7 @@ export default async function LeadershipPage() {
           </div>
 
           <div className="relative max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between w-full">
               
               <div className="w-full lg:w-3/5 flex flex-col items-start justify-center text-left">
                 {/* Eyebrow badge */}
@@ -67,7 +67,7 @@ export default async function LeadershipPage() {
                 </p>
 
                 <div className="flex flex-wrap items-start justify-start gap-3 sm:gap-4">
-                  <a href={leader.linkedinUrl || "https://linkedin.com/in/gaurav-gupta-travash"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-[#004771] hover:bg-[#02487D] text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all">
+                  <a href={leader.linkedinUrl || "https://www.linkedin.com/in/gauravgupta5/"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-[#004771] hover:bg-[#02487D] text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all">
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -80,8 +80,8 @@ export default async function LeadershipPage() {
 
               {/* Profile Image matching BairesDev / clean layouts */}
               <div className="w-full lg:w-2/5 flex justify-center lg:justify-end relative">
-                <div className="absolute top-10 right-0 w-64 h-64 bg-teal-100 rounded-full blur-3xl opacity-60" />
-                <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
+                <div className="absolute top-10 right-0 w-72 h-72 bg-teal-100 rounded-full blur-3xl opacity-60" />
+                <div className="relative w-full max-w-md lg:max-w-[28rem] aspect-[4/4] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
                   {leaderImage ? (
                     <Image
                       src={leaderImage}
