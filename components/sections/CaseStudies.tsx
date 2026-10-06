@@ -267,12 +267,12 @@ export default function CaseStudies({ data }: { data?: CaseStudiesSectionData })
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1.0] }}
-              className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-start"
+              className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center"
             >
               {/* Left Column: Clean Image Link */}
               <Link
                 href={current.ctaHref}
-                className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm border border-gray-100 group cursor-pointer"
+                className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center  border border-gray-100 group cursor-pointer"
               >
                 <Image
                   src={current.image || '/casestudy-thumbs/Satyaapan.png'}
