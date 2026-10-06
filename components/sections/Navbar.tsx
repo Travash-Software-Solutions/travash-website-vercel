@@ -141,7 +141,7 @@ const DEFAULT_LINKS: NavLink[] = [
   { label: 'Services', href: '/services', hasDropdown: true },
   { label: 'Industries', href: '/industries' },
   { label: 'Our Work', href: '/portfolio' },
-  { label: 'About', href: '/about-us' },
+  { label: 'About', href: '/about-us', hasDropdown: true },
   { label: 'Careers', href: '/career' },
   { label: 'Blog', href: '/blogs' },
 ]
@@ -151,6 +151,10 @@ export default function Navbar({ settings }: NavbarProps) {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  
+  const [aboutOpen, setAboutOpen] = useState(false)
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false)
+  const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const navLinks = settings?.navLinks || DEFAULT_LINKS
   const ctaLabel = settings?.ctaLabel || 'Contact us'
@@ -176,6 +180,17 @@ export default function Navbar({ settings }: NavbarProps) {
     }, 200)
   }
 
+  const handleAboutMouseEnter = () => {
+    if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current)
+    setAboutOpen(true)
+  }
+
+  const handleAboutMouseLeave = () => {
+    aboutTimeoutRef.current = setTimeout(() => {
+      setAboutOpen(false)
+    }, 200)
+  }
+
   // Prevent background scrolling when mobile drawer is open & reset accordion on close
   useEffect(() => {
     if (menuOpen) {
@@ -183,6 +198,7 @@ export default function Navbar({ settings }: NavbarProps) {
     } else {
       document.body.style.overflow = ''
       setMobileServicesOpen(false)
+      setMobileAboutOpen(false)
     }
     return () => {
       document.body.style.overflow = ''
@@ -208,7 +224,39 @@ export default function Navbar({ settings }: NavbarProps) {
           {/* Desktop Nav — centered */}
           <ul className="hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center">
             {navLinks.map((link) => {
-              const isServices = link.label === 'Services' || link.hasDropdown
+              const isAbout = link.label === 'About' || link.label === 'About Us'
+              const isServices = link.label === 'Services' || (link.hasDropdown && !isAbout)
+
+              if (isAbout) {
+                return (
+                  <li
+                    key={link.label}
+                    className="relative py-4"
+                    onMouseEnter={handleAboutMouseEnter}
+                    onMouseLeave={handleAboutMouseLeave}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`flex items-center gap-1 text-[13.5px] font-medium px-3 py-2 rounded-lg transition-colors ${aboutOpen ? 'text-[#004771] bg-gray-50' : 'text-gray-600 hover:text-[#004771] hover:bg-gray-50'
+                        }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown
+                        size={13}
+                        className={`transition-transform duration-200 ${aboutOpen ? 'rotate-180 text-[#004771]' : 'text-gray-400'
+                          }`}
+                      />
+                    </Link>
+
+                    {aboutOpen && (
+                      <div className="absolute top-[60px] left-1/2 -translate-x-1/2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-200 py-2 z-50">
+                        <Link href="/about-us" onClick={() => setAboutOpen(false)} className="block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#004771] transition-colors">Company Overview</Link>
+                        <Link href="/leadership" onClick={() => setAboutOpen(false)} className="block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#004771] transition-colors">Leadership</Link>
+                      </div>
+                    )}
+                  </li>
+                )
+              }
 
               if (isServices) {
                 return (
@@ -514,7 +562,47 @@ export default function Navbar({ settings }: NavbarProps) {
           {/* Scrollable Navigation */}
           <nav className="flex flex-col p-4 sm:p-6 gap-1 flex-1 overflow-y-auto">
             {navLinks.map((link) => {
-              const isServices = link.label === 'Services' || link.hasDropdown
+              const isAbout = link.label === 'About' || link.label === 'About Us'
+              const isServices = link.label === 'Services' || (link.hasDropdown && !isAbout)
+
+              if (isAbout) {
+                return (
+                  <div key={link.label} className="border-b border-gray-100 pb-2 mb-2">
+                    <button
+                      onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                      className="w-full flex items-center justify-between text-gray-800 hover:text-[#004771] hover:bg-gray-50 px-4 py-3 rounded-xl text-base font-bold transition-colors cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span>{link.label}</span>
+                      </div>
+                      <ChevronDown
+                        size={18}
+                        className={`text-gray-500 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180 text-[#004771]' : ''
+                          }`}
+                      />
+                    </button>
+
+                    {mobileAboutOpen && (
+                      <div className="pl-4 pr-1 pt-1 pb-2 space-y-1 animate-in fade-in-0 duration-200">
+                        <Link
+                          href="/about-us"
+                          onClick={() => setMenuOpen(false)}
+                          className="block px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#004771] transition-colors"
+                        >
+                          Company Overview
+                        </Link>
+                        <Link
+                          href="/leadership"
+                          onClick={() => setMenuOpen(false)}
+                          className="block px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#004771] transition-colors"
+                        >
+                          Leadership
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                )
+              }
 
               if (isServices) {
                 return (
