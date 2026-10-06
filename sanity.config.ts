@@ -164,15 +164,33 @@ const customStructure = (S: any) =>
             ])
         ),
 
-      // Singleton: About Us Page
+      // About Us Section (About Us & Leadership)
       S.listItem()
-        .title('About Us Page')
-        .id('aboutPage')
+        .title('About Us & Leadership')
+        .id('aboutSectionGroup')
         .child(
-          S.document()
-            .title('About Us Page')
-            .schemaType('aboutPage')
-            .documentId('aboutPage')
+          S.list()
+            .title('About Us & Leadership')
+            .items([
+              S.listItem()
+                .title('About Us Page')
+                .id('aboutPage')
+                .child(
+                  S.document()
+                    .title('About Us Page')
+                    .schemaType('aboutPage')
+                    .documentId('aboutPage')
+                ),
+              S.listItem()
+                .title('Leadership Page')
+                .id('leadershipPage')
+                .child(
+                  S.document()
+                    .title('Leadership Page')
+                    .schemaType('leadershipPage')
+                    .documentId('leadershipPage')
+                ),
+            ])
         ),
 
       // Careers

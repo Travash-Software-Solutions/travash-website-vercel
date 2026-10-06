@@ -757,6 +757,34 @@ export const technologyCategoriesQuery = groq`
   }
 `
 
+// Leadership Page query
+export const leadershipPageQuery = groq`
+  {
+    "leadershipPage": *[_type == "leadershipPage"][0] {
+      hero {
+        eyebrow,
+        name,
+        role,
+        description,
+        linkedinUrl,
+        contactEmail,
+        image ${imageFragment}
+      },
+      biography,
+      careerHighlights[] {
+        value,
+        label,
+        iconName
+      },
+      seo {
+        metaTitle,
+        metaDescription,
+        ogImage ${imageFragment}
+      }
+    }
+  }
+`
+
 // About Page query
 export const aboutPageQuery = groq`
   {

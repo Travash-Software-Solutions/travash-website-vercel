@@ -20,6 +20,7 @@ import { technology } from './technology'
 import { industry } from './industry'
 
 import { aboutPage } from './aboutPage'
+import { leadershipPage } from './leadershipPage'
 import { careerPage } from './careerPage'
 import { job } from './job'
 import { technologyCategory } from './technologyCategory'
@@ -47,6 +48,7 @@ export const schemaTypes = [
   bulkMediaUpload,
   homePage,
   aboutPage,
+  leadershipPage,
   careerPage,
   caseStudiesPage,
   caseStudy,
