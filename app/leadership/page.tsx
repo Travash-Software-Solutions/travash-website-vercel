@@ -47,7 +47,7 @@ export default async function LeadershipPage() {
           <div className="relative max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between w-full">
               
-              <div className="w-full lg:w-3/5 flex flex-col items-start justify-center text-left">
+              <div className="w-full lg:w-2/5 flex flex-col items-start justify-center text-left">
                 {/* Eyebrow badge */}
                 <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
                   <Briefcase className="w-4 h-4 text-[#14B8A6]" />
@@ -79,9 +79,9 @@ export default async function LeadershipPage() {
               </div>
 
               {/* Profile Image matching BairesDev / clean layouts */}
-              <div className="w-full lg:w-2/5 flex justify-center lg:justify-end relative">
+              <div className="w-full lg:w-3/5 flex justify-center lg:justify-end relative">
                 <div className="absolute top-10 right-0 w-72 h-72 bg-teal-100 rounded-full blur-3xl opacity-60" />
-                <div className="relative w-full max-w-md lg:max-w-[28rem] aspect-[4/4] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
+                <div className="relative w-full max-w-lg lg:max-w-xl aspect-[4/4] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
                   {leaderImage ? (
                     <Image
                       src={leaderImage}
