@@ -88,7 +88,7 @@ export default async function LeadershipPage() {
               
               <div className="w-full lg:w-2/5 flex flex-col items-start justify-center text-left">
                 {/* Eyebrow badge */}
-                <div className="inline-flex items-start gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
+                <div className="inline-flex items-start  gap-2 px-3.5 py-1.5 rounded-full bg-[hsl(204,94%,94%)] text-[#02487D] text-[19px] font-bold uppercase tracking-wider mb-4 sm:mb-5 w-100 h-10">
                   <Briefcase className="w-4 h-4 text-[#14B8A6]" />
                   <span>{eyebrow}</span>
                 </div>
