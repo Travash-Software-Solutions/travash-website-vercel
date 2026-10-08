@@ -57,9 +57,9 @@ async function seed() {
       { _key: '7', label: 'Blog', href: '/blog' },
     ],
     socialLinks: [
-      { _key: '1', platform: 'facebook', url: 'https://www.facebook.com/travashsoftwaresolutions' },
-      { _key: '2', platform: 'twitter', url: 'https://twitter.com/TravashSoftSols' },
-      { _key: '3', platform: 'instagram', url: 'https://www.instagram.com/travashsoftwaresolutions/' },
+      { _key: '1', platform: 'facebook', url: 'https://www.facebook.com/travashglobal' },
+      { _key: '2', platform: 'twitter', url: 'https://x.com/travashglobal' },
+      { _key: '3', platform: 'instagram', url: 'https://www.instagram.com/travashglobal/' },
       { _key: '4', platform: 'linkedin', url: 'https://www.linkedin.com/company/travash-software-solutions/' },
     ],
     menuLinks: [
