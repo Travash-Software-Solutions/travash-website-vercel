@@ -86,14 +86,14 @@ export default async function LeadershipPage() {
           <div className="relative max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between w-full">
               
-              <div className="w-full lg:w-2/5 flex flex-col items-start justify-center text-left">
+              <div className="w-full lg:w-3/5 flex flex-col items-start justify-center text-left">
                 {/* Eyebrow badge */}
-                <div className="inline-flex items-start  gap-2 px-3.5 py-1.5 rounded-full bg-[hsl(204,94%,94%)] text-[#02487D] text-[19px] font-bold uppercase tracking-wider mb-4 sm:mb-5 w-100 h-10">
-                  <Briefcase className="w-4 h-4 text-[#14B8A6]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
+                  <Briefcase className="w-3.5 h-3.5 text-[#14B8A6]" />
                   <span>{eyebrow}</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-4 sm:mb-6">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-2 sm:mb-3">
                   {name}
                 </h1>
                 
@@ -101,40 +101,30 @@ export default async function LeadershipPage() {
                   {role}
                 </h2>
 
-                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-3xl mb-6 sm:mb-8 font-medium">
-                  {description}
+                {/* Tagline placed in place of buttons in hero section */}
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl font-medium border-l-4 border-[#004771] pl-4 sm:pl-5 py-2 bg-[#E0F2FE]/40 rounded-r-xl">
+                  Gaurav Gupta established Travash Software Solutions with a conviction that continues to guide the company: <span className="text-[#004771] font-bold">technology should create meaningful value for the businesses and people who rely on it.</span>
                 </p>
-
-                <div className="flex flex-wrap items-start justify-start gap-3 sm:gap-4">
-                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-[#004771] hover:bg-[#02487D] text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                  <a href={`mailto:${contactEmail}`} className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-white border border-gray-200 hover:border-[#004771] text-[#0B1E3D] hover:text-[#004771] font-semibold text-sm sm:text-base shadow-xs hover:bg-gray-50 transition-all">
-                    <Mail className="w-4 h-4 text-[#004771]" />
-                    <span>Get in Touch</span>
-                  </a>
-                </div>
               </div>
 
-              {/* Profile Image */}
-              <div className="w-full lg:w-3/5 flex justify-center lg:justify-end relative">
-                <div className="absolute top-10 right-0 w-72 h-72 bg-teal-100 rounded-full blur-3xl opacity-60" />
-                <div className="relative w-full max-w-lg lg:max-w-xl aspect-[4/4] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
+              {/* Profile Image - Decreased Height */}
+              <div className="w-full lg:w-2/5 flex justify-center lg:justify-end relative">
+                <div className="absolute top-4 right-4 w-60 h-60 bg-teal-100 rounded-full blur-3xl opacity-60" />
+                <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-[340px] aspect-[4/4] rounded-3xl overflow-hidden shadow-lg border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
                   {leaderImage ? (
                     <Image
                       src={leaderImage}
                       alt={name}
                       fill
-                      sizes="(max-width: 768px) 100vw, 400px"
+                      sizes="(max-width: 768px) 100vw, 340px"
                       className="object-cover object-top"
                     />
                   ) : (
-                    <div className="text-center p-8">
-                      <div className="w-20 h-20 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                        <Briefcase className="w-8 h-8 text-gray-400" />
+                    <div className="text-center p-6">
+                      <div className="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-full flex items-center justify-center">
+                        <Briefcase className="w-7 h-7 text-gray-400" />
                       </div>
-                      <p className="text-gray-500 font-medium text-sm">{name}<br/>Profile Image</p>
+                      <p className="text-gray-500 font-medium text-xs">{name}<br/>Profile Image</p>
                     </div>
                   )}
                 </div>
@@ -155,12 +145,8 @@ export default async function LeadershipPage() {
                   <PortableText value={bio} />
                 ) : (
                   <>
-                    <p className="text-xl sm:text-2xl font-medium text-[#0B1E3D] leading-snug">
-                      Gaurav Gupta established Travash Software Solutions with a conviction that continues to guide the company: <span className="text-[#004771] font-bold">technology should create meaningful value for the businesses and people who rely on it.</span>
-                    </p>
-                    <div className="h-1 w-16 bg-gradient-to-r from-[#14B8A6] to-[#004771] rounded-full my-8" />
-                    <p>
-                      With over <strong className="text-[#004771]">24 years of experience</strong> in the IT industry, he brings expertise in Product Lifecycle Management (PLM), software architecture, and enterprise systems. His work with organisations including GE, John Deere, Satyam, and Geometric Software gave him firsthand insight into complex business environments and the importance of connecting technical decisions with commercial priorities.
+                    <p className="text-lg sm:text-xl font-medium text-gray-700 leading-relaxed">
+                      With over <strong className="text-[#004771]">24 years of experience</strong> in the IT industry, Gaurav brings expertise in Product Lifecycle Management (PLM), software architecture, and enterprise systems. His work with organisations including GE, John Deere, Satyam, and Geometric Software gave him firsthand insight into complex business environments and the importance of connecting technical decisions with commercial priorities.
                     </p>
                     
                     <h3 className="text-2xl font-bold text-[#0B1E3D] mt-12 mb-4">Building Travash Around Client Needs</h3>
