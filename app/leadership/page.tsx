@@ -86,30 +86,9 @@ export default async function LeadershipPage() {
           <div className="relative max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between w-full">
               
-              <div className="w-full lg:w-3/5 flex flex-col items-start justify-center text-left">
-                {/* Eyebrow badge */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
-                  <Briefcase className="w-3.5 h-3.5 text-[#14B8A6]" />
-                  <span>{eyebrow}</span>
-                </div>
-
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-2 sm:mb-3">
-                  {name}
-                </h1>
-                
-                <h2 className="text-xl sm:text-2xl text-[#004771] font-semibold mb-6">
-                  {role}
-                </h2>
-
-                {/* Tagline placed in place of buttons in hero section */}
-                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl font-medium border-l-4 border-[#004771] pl-4 sm:pl-5 py-2 bg-[#E0F2FE]/40 rounded-r-xl">
-                  Gaurav Gupta established Travash Software Solutions with a conviction that continues to guide the company: <span className="text-[#004771] font-bold">technology should create meaningful value for the businesses and people who rely on it.</span>
-                </p>
-              </div>
-
-              {/* Profile Image - Decreased Height */}
-              <div className="w-full lg:w-2/5 flex justify-center lg:justify-end relative">
-                <div className="absolute top-4 right-4 w-60 h-60 bg-teal-100 rounded-full blur-3xl opacity-60" />
+              {/* Profile Image - Left Side */}
+              <div className="w-full lg:w-2/5 flex justify-center lg:justify-start relative">
+                <div className="absolute top-4 left-4 w-60 h-60 bg-teal-100 rounded-full blur-3xl opacity-60" />
                 <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-[340px] aspect-[4/4] rounded-3xl overflow-hidden shadow-lg border-4 border-white bg-gray-50 z-10 flex items-center justify-center">
                   {leaderImage ? (
                     <Image
@@ -128,6 +107,28 @@ export default async function LeadershipPage() {
                     </div>
                   )}
                 </div>
+              </div>
+
+              {/* Text & Tagline - Right Side */}
+              <div className="w-full lg:w-3/5 flex flex-col items-start justify-center text-left">
+                {/* Eyebrow badge */}
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] text-[#02487D] text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
+                  <Briefcase className="w-3.5 h-3.5 text-[#14B8A6]" />
+                  <span>{eyebrow}</span>
+                </div>
+
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-2 sm:mb-3">
+                  {name}
+                </h1>
+                
+                <h2 className="text-xl sm:text-2xl text-[#004771] font-semibold mb-6">
+                  {role}
+                </h2>
+
+                {/* Tagline quote box */}
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl font-medium border-l-4 border-[#004771] pl-4 sm:pl-5 py-2 bg-[#E0F2FE]/40 rounded-r-xl">
+                  Gaurav Gupta established Travash Software Solutions with a conviction that continues to guide the company: <span className="text-[#004771] font-bold">technology should create meaningful value for the businesses and people who rely on it.</span>
+                </p>
               </div>
 
             </div>
