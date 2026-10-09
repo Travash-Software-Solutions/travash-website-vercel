@@ -93,7 +93,7 @@ export default async function LeadershipPage() {
                   <span>{eyebrow}</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-semibold text-[#121212] tracking-tight leading-[1.15] mb-4 sm:mb-6">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-4 sm:mb-6">
                   {name}
                 </h1>
                 

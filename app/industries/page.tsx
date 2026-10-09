@@ -73,7 +73,7 @@ export default async function IndustriesDirectoryPage() {
               <Sparkles className="w-3.5 h-3.5 text-[#14B8A6]" />
               <span>INDUSTRY-SPECIFIC ENGINEERING</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#0B1E3D] tracking-tight leading-[1.15] max-w-4xl mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] max-w-4xl mb-6">
               Deep Domain Expertise Across 8+ Global Verticals
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl leading-relaxed mb-8">

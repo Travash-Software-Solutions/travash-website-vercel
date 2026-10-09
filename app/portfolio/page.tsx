@@ -102,12 +102,23 @@ export default async function PortfolioPage() {
     'darpan',
     'i-verify',
     'dine-desk',
+    // Gemba is controlled by the admin toggle — always include in data,
+    // visibility is handled client-side by GembaToggleWrapper
+    'gemba',
   ]
 
-  // Map and filter default projects to include ONLY the 11 updated case studies
+  // Map and filter default projects to include ONLY approved case studies that are set visible
   const projects: PortfolioProject[] = DEFAULT_PORTFOLIO_PROJECTS
     .filter((p) => {
       const slug = p.slug.toLowerCase().trim()
+      const slugKey = slug === 'i4c' ? 'i4c-bank-portal' : slug === 'dinedesk' ? 'dine-desk' : slug
+      const sp = sanitySlugMap.get(slugKey)
+
+      // If Sanity project explicitly sets portfolioVisible to false, filter it out
+      if (sp && sp.portfolioVisible === false) {
+        return false
+      }
+
       return (
         UPDATED_PORTFOLIO_SLUGS.includes(slug) ||
         (slug === 'i4c' && UPDATED_PORTFOLIO_SLUGS.includes('i4c-bank-portal')) ||
@@ -186,6 +197,7 @@ export default async function PortfolioPage() {
             />
           </Suspense>
         </div>
+
 
         {/* Proven Scale Stats */}
         <Stats />

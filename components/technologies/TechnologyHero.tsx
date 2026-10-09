@@ -28,7 +28,7 @@ export default function TechnologyHero({ heading, description, eyebrow }: Techno
             <span>{eyebrowText}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#121212] tracking-tight leading-[1.15] mb-5">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-5">
             {h1}
           </h1>
 

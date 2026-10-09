@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ShieldCheck, FileText, Lock, Scale, HelpCircle, ArrowRight } from 'lucide-react'
 import Navbar from '@/components/sections/Navbar'
 import Footer from '@/components/sections/Footer'
+import Contact from '@/components/sections/Contact'
 import { client } from '@/lib/sanity'
 import { homePageQuery } from '@/lib/queries'
 
@@ -152,6 +153,15 @@ export default async function TermsPage() {
             </div>
           </div>
         </section>
+
+        {/* Inquiry Form Section */}
+        <Contact
+          data={{
+            heading: 'Have Questions About Our Terms?',
+            subheading: 'Reach out to our team or submit your inquiry below and we will get back to you promptly.',
+            submitLabel: 'Send Inquiry',
+          }}
+        />
       </main>
       <Footer settings={siteSettings} />
     </>

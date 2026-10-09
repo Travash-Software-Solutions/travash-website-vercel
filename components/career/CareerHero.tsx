@@ -67,7 +67,7 @@ export default function CareerHero({
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#121212] tracking-tight leading-[1.15] mb-6">
             {h1}
           </h1>
 

@@ -3164,6 +3164,174 @@ export const DEFAULT_RADIANTSA_DATA: CaseStudyData = {
 }
 
 // ----------------------------------------------------------------------
+// 12. Gemba – Industrial Maintenance Platform
+// ----------------------------------------------------------------------
+export const DEFAULT_GEMBA_DATA: CaseStudyData = {
+  _id: 'proj-gemba',
+  title: 'Gemba – Smarter Maintenance for Industrial Performance',
+  slug: { current: 'gemba' },
+  eyebrow: 'CASE STUDY',
+  category: 'Manufacturing Software',
+  industry: 'Manufacturing & Industrial Operations',
+  client: 'Gemba',
+  location: 'Global',
+  shortDescription:
+    'Travash built Gemba as a smart maintenance platform that helps industrial teams track machine breakdowns, understand downtime and make faster maintenance decisions.',
+  heroImage: { asset: { url: '/images/portfolio/gemba.png' } },
+  featureImage: '/images/portfolio/gemba.png',
+  projectMeta: [
+    { label: 'Industry', value: 'Manufacturing & Industrial Operations' },
+    { label: 'Solution', value: 'Web & Desktop Application' },
+    { label: 'Focus', value: 'Maintenance Management, Downtime Tracking & Root Cause Analysis' },
+    { label: 'Platform', value: 'Web Application + Desktop Application' },
+  ],
+  metrics: [
+    { value: '30%', label: 'Downtime Reduction', description: 'Improved visibility and faster maintenance response' },
+    { value: '100+', label: 'Breakdowns Tracked', description: 'Structured capture and monitoring of breakdown events' },
+    { value: '25%', label: 'Equipment Availability Improvement', description: 'Better maintenance visibility' },
+    { value: '50%', label: 'Faster Resolution', description: 'Real-time information helps teams resolve issues faster' },
+  ],
+  executiveSummary: {
+    title: 'Executive Summary',
+    subtitle: 'Custom Maintenance Software for Better Machine Uptime',
+    paragraphs: [
+      'Travash built Gemba as a smart maintenance platform that helps industrial teams track machine breakdowns, understand downtime and make faster maintenance decisions.',
+      'The platform was designed with manufacturing teams in mind and built to work alongside existing systems — turning maintenance events into actionable data that helps teams move from simply recording breakdowns to understanding and reducing recurring problems.',
+    ],
+  },
+  challenge: {
+    title: 'The Operational Challenge',
+    subtitle: 'Industrial maintenance teams need to respond quickly when machines break down, but manual reporting and limited visibility can make it difficult to understand what is happening on the plant floor.',
+    content:
+      'Gemba was created to address this by helping teams capture every maintenance event, understand why it happened and act faster. Instead of relying on manual logs, the platform brings breakdown reporting, downtime tracking and maintenance insights into one connected workflow.',
+    pointsLabel: 'TEAMS NEEDED TO:',
+    points: [
+      'Track machine breakdowns in real time',
+      'Record accurate downtime',
+      'Identify recurring root causes',
+      'Reduce manual maintenance reporting',
+      'Make faster, data-backed maintenance decisions',
+    ],
+  },
+  approach: {
+    title: 'The Approach',
+    intro: 'Turning Maintenance Events into Actionable Data',
+    steps: [
+      {
+        stepNumber: '01',
+        title: 'Breakdown Occurs',
+        description: 'A machine breakdown event is detected and logged by maintenance teams on the plant floor.',
+      },
+      {
+        stepNumber: '02',
+        title: 'Event Logged',
+        description: 'The breakdown is captured digitally in real time, replacing manual paper logs.',
+      },
+      {
+        stepNumber: '03',
+        title: 'Downtime Tracked',
+        description: 'Accurate downtime data is recorded so teams can understand where production time is being lost.',
+      },
+      {
+        stepNumber: '04',
+        title: 'Root Cause Identified',
+        description: 'Maintenance teams identify recurring issues and understand the causes behind equipment failures.',
+      },
+      {
+        stepNumber: '05',
+        title: 'Action Taken → Maintenance Improved',
+        description: 'Teams act on the insights to resolve issues faster and reduce recurring problems over time.',
+      },
+    ],
+  },
+  solution: {
+    title: 'The Solution',
+    intro: 'Gemba – A Digital Maintenance Platform for Industrial Teams',
+    items: [
+      {
+        title: 'Real-Time Breakdown Tracking',
+        description: 'Teams can log and monitor machine breakdowns as they happen, helping maintenance teams respond faster.',
+      },
+      {
+        title: 'Downtime Tracking',
+        description: 'Gemba captures accurate downtime information so teams can understand where production time is being lost.',
+      },
+      {
+        title: 'Root Cause Analysis',
+        description: 'Maintenance teams can identify recurring issues and understand the causes behind equipment failures.',
+      },
+      {
+        title: 'Mobile-Friendly Maintenance',
+        description: 'The platform enables teams to capture and review maintenance information directly from the plant floor.',
+      },
+      {
+        title: 'Actionable Maintenance Insights',
+        description: 'Collected maintenance data is turned into clear insights that help teams make better maintenance decisions.',
+      },
+    ],
+  },
+  solutionArchitecture: {
+    title: 'Solution Architecture',
+    intro:
+      'Breakdown Occurs → Event Logged → Downtime Tracked → Root Cause Identified → Action Taken → Maintenance Improved. A continuous maintenance workflow where teams move from recording breakdowns to understanding and reducing recurring problems.',
+    image: { asset: { url: '/casestudy-img/arctature-daigram.webp' } },
+    caption: 'Figure: Gemba Maintenance Workflow & Industrial Platform Architecture',
+  },
+  impact: {
+    title: 'Business Impact',
+    subtitle: 'From Reactive Maintenance to Data-Driven Workflow',
+    content:
+      'Gemba helped transform maintenance from a largely reactive process into a more structured, data-driven workflow.',
+    outcomes: [
+      '30% less downtime: Improved visibility and faster maintenance response helped reduce machine downtime',
+      '100+ breakdowns tracked: The platform provided a structured way to capture and monitor breakdown events',
+      '25% better equipment availability: Better maintenance visibility supported improved equipment availability',
+      '50% faster resolution: Real-time information helped maintenance teams resolve issues faster',
+    ],
+  },
+  beforeAfter: {
+    title: 'Before → After',
+    subtitle: 'From Manual Reporting to Digital Maintenance Workflow',
+    beforeTitle: 'BEFORE GEMBA',
+    afterTitle: 'AFTER GEMBA',
+    before: [
+      'Manual Breakdown Reporting: Maintenance events depended on manual logging',
+      'Limited Downtime Visibility: Teams had less visibility into where time was being lost',
+      'Difficult Root Cause Tracking: Recurring issues were harder to identify and analyse',
+      'Slower Maintenance Response: Teams needed better access to information when responding to breakdowns',
+    ],
+    after: [
+      'Digital Event Tracking: Breakdowns can be logged and monitored in real time',
+      'Clear Downtime Data: Teams can measure and understand equipment downtime',
+      'Root Cause Visibility: Maintenance teams can identify recurring issues',
+      'Faster Resolution: Teams have the information needed to respond faster',
+    ],
+  },
+  whyItMatters: {
+    title: 'Why Gemba Matters',
+    subtitle: 'Still Relying on Manual Maintenance Logs or Disconnected Systems?',
+    items: [
+      'Gemba demonstrates how custom software development for manufacturing can solve a very specific operational problem',
+      'Rather than forcing industrial teams to adapt to generic software, Travash built a platform around the way maintenance teams actually work',
+      'Helping them track breakdowns, reduce downtime, identify root causes and improve equipment availability',
+      'Travash can help you build a custom manufacturing software solution around your processes — from maintenance tracking and workflow automation to real-time operational visibility',
+    ],
+  },
+  nextStep: {
+    heading: 'Ready to Improve Your Maintenance Operations?',
+    content:
+      'Still relying on manual maintenance logs or disconnected systems? Travash can help you build a custom manufacturing software solution around your processes, from maintenance tracking and workflow automation to real-time operational visibility.',
+    primaryCTA: { label: 'Discuss Your Manufacturing Software Requirements', href: '#contact' },
+    secondaryCTA: { label: 'Explore Industrial Software Solutions', href: '#contact' },
+  },
+  seo: {
+    metaTitle: 'Gemba: Industrial Maintenance Software Case Study | Travash Software Solutions',
+    metaDescription:
+      'Discover how Travash built Gemba, a custom industrial maintenance management platform that helped reduce machine downtime by 30% and track 100+ breakdowns.',
+  },
+}
+
+// ----------------------------------------------------------------------
 // Master Fallback Registry of all Reviewed Case Studies
 // ----------------------------------------------------------------------
 export const FALLBACK_CASE_STUDIES: Record<string, CaseStudyData> = {
@@ -3207,6 +3375,10 @@ export const FALLBACK_CASE_STUDIES: Record<string, CaseStudyData> = {
   radiantsage: DEFAULT_RADIANTSA_DATA,
   'radiant-sage': DEFAULT_RADIANTSA_DATA,
   'smart-healthcare-data-platform': DEFAULT_RADIANTSA_DATA,
+
+  // 12. Gemba Industrial Maintenance Platform
+  gemba: DEFAULT_GEMBA_DATA,
+  'gemba-connect': DEFAULT_GEMBA_DATA,
 
   // Historical & CMS Slugs
   darpan: DEFAULT_DARPAN_DATA,

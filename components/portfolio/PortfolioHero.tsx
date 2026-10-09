@@ -76,11 +76,7 @@ export default function PortfolioHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-5xl lg:text-[52px] xl:text-[52px] font-[500] leading-[1.14] lg:leading-[64px] tracking-[-0.03em] hero-title-gradient mb-6"
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 500,
-            }}
+            className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.15] hero-title-gradient mb-6"
           >
             {heading}{' '}
             {headingHighlight && (

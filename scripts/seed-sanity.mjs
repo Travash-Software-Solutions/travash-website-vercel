@@ -329,6 +329,7 @@ async function seed() {
 
   console.log('Writing individual section documents...')
   await client.createOrReplace({ _id: 'heroSection', _type: 'heroSection', ...homePageDoc.hero })
+  await client.createOrReplace({ _id: 'trustedBySection', _type: 'trustedBySection', heading: 'Trusted by Startups, Enterprises & Public Sector' })
   await client.createOrReplace({ _id: 'capabilitiesSection', _type: 'capabilitiesSection', ...homePageDoc.capabilities })
   await client.createOrReplace({ _id: 'caseStudySection', _type: 'caseStudySection', ...homePageDoc.caseStudies })
   await client.createOrReplace({ _id: 'statsSection', _type: 'statsSection', ...homePageDoc.stats })
